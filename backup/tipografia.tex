@@ -1,0 +1,72 @@
+\documentclass[10pt,oneside,openany]{scrbook}
+\usepackage[margin=20mm]{geometry}
+\usepackage{luaotfload}
+\usepackage{lipsum}
+\usepackage{opcdevocionario}%%%DEFINICOES%%%
+\usepackage{tipografia}
+\usepackage{paracol}
+\usepackage{color}
+
+\newcommand{\alfa}{℣.℟.aáàãâbcdeéèêfghiíìjklmnoóòõôpqrstuúvxyz
+AÁÀÃÂBCDEÉÈÊFGHIJKLMNOÓÒÕÔPQRSTUVXYZ
+012345678910 Æ æ Œ œ ff fi fj fh fl ft  ffi ffj ffl Th st ct tt fk}
+
+\begin{document}
+\section{Tipografiaa}
+\titulo{Tipografia}
+\sectioninfo{Letra Normal}{Normal 123456890}
+\alfa
+
+\subsection{small caps}
+
+\textsc{\alfa}
+
+\subsection{itálico}
+
+\textit{\alfa}
+
+\subsection{emph}
+
+\emph{\alfa}
+
+\subsection{bold}
+
+\textbf{\alfa}
+
+\subsubsection{Lada a lado}
+
+\begin{paracol}{2}
+\blettrine{S}{abc} \lipsum[1]
+\switchcolumn
+\blettrine{A}{abc} \lipsum[2]
+\switchcolumn*
+\rlettrine{D}{abc} \lipsum[3]
+\switchcolumn
+\rlettrine{E}{abc} \lipsum[4]
+\switchcolumn*
+\lipsum[5]
+\switchcolumn
+\lipsum[6]
+\switchcolumn*
+\lipsum[7]
+\switchcolumn
+\lipsum[8]
+\switchcolumn*
+\lipsum[9]
+\switchcolumn
+\lipsum[10]
+\switchcolumn*
+\lipsum[11]
+\switchcolumn
+\lipsum[12]
+\switchcolumn*
+\lipsum[13]
+\switchcolumn
+\lipsum[14]
+\switchcolumn*
+\lipsum[15]
+\switchcolumn
+\lipsum[16]
+\end{paracol}
+
+\end{document}

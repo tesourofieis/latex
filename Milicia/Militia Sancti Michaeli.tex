@@ -1,0 +1,64 @@
+\documentclass[paper=a5,10pt,openany]{scrbook}
+\usepackage[footnotesep=1.5\baselineskip,twoside, top=0.06\paperheight, bottom=0.06\paperheight, left=0.125\paperwidth,
+right=0.125\paperwidth, headsep=0.02\paperheight, foot=0.01\paperheight, bindingoffset=0\paperheight,heightrounded,includeheadfoot]{geometry}
+
+\usepackage{background}
+
+\parskip=0pt
+\raggedbottom
+\usepackage{opcdevocionario}%%Ficheiro sty na pasta controla os pacotes todos
+\usepackage{tipografia}%%Ficheiro sty na pasta controla a tipografia
+
+\setkomafont{subject}{\scshape}
+\setkomafont{title}{\Huge}
+\setkomafont{subtitle}{\scshape\color{red}}
+\setkomafont{author}{\scshape}
+\setkomafont{date}{\itshape\color{red}}
+
+\setkomafont{chapter}{\normalfont\Large\scshape}
+\renewcommand*{\raggedchapter}{\centering}
+
+\begin{document}
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=1.1\textwidth, height=1.1\textheight]{frame6}}}
+
+\begin{titlepage}
+\begin{center}
+\vspace*{2.5cm}
+\Huge{Sanctum Rosarium}\\
+\large{Santo Rosário}
+\vspace*{1cm}
+
+\includegraphics[width=0.85\textwidth]{sanctemichael}
+\vspace*{1cm}
+\Large{\redx Militia Sancti Michæli}\\
+\large{2018}\\
+
+\end{center}
+\end{titlepage}
+
+\sloppy%Justifica texto
+\pretolerance=-1
+\tolerance=3000
+\adjdemerits=6400
+\doublehyphendemerits=8000000
+\finalhyphendemerits=14400
+\hbadness=99999
+
+\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=1.1\textwidth, height=1.1\textheight]{frame6}}}
+
+\NewDocumentEnvironment{hangparacol}{mo}% LADO A LADO
+  {\IfNoValueTF{#2} {\begin{paracol}{#1}}{\begin{paracol}{#1}[#2]}%
+   \raggedright
+   \parindent=3em \leftskip=3em}
+  {\end{paracol}}
+\columnratio{0.47}
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{3mm}
+\colseprulecolor{red}
+
+\pagenumbering{arabic}
+
+\input{oratiomilitia.tex}
+
+\end{document}

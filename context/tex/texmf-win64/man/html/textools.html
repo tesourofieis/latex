@@ -1,0 +1,306 @@
+<!-- Creator     : groff version 1.19.1 -->
+<!-- CreationDate: Tue Aug 12 16:41:24 2008 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<title>TEXTOOLS</title>
+</head>
+<body>
+
+<h1 align=center>TEXTOOLS</h1>
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#OPTIONS">OPTIONS</a><br>
+<a href="#SEE ALSO">SEE ALSO</a><br>
+<a href="#BUGS">BUGS</a><br>
+<a href="#AUTHOR">AUTHOR</a><br>
+
+<hr>
+<a name="NAME"></a>
+<h2>NAME</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>textools &minus; generate TeX map files, afm files, fix
+texmf trees</p>
+</td>
+</table>
+<a name="SYNOPSIS"></a>
+<h2>SYNOPSIS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>textools</b> [ <i>OPTIONS</i> ... ] [ <i>pattern</i>
+or <i>name</i> or <i>fromroot toroot</i> ] [ <i>MODIFIER
+OPTIONS</i> ... ]</p>
+</td>
+</table>
+<a name="DESCRIPTION"></a>
+<h2>DESCRIPTION</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>textools</b> processes map files, converts Mac files
+to DOS format, generates map files, fixes texmf trees, and
+performs a utility-belt worth of other tasks also useful in
+installing and maintaining the zillion auxilliary files that
+<b>tex</b>(1) and its friends require.</p>
+</td>
+</table>
+<a name="OPTIONS"></a>
+<h2>OPTIONS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>The modifier options are listed after the options that
+they modify.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--downcasefilenames</b> [<b>--recurse</b>]
+[<b>--force</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--encmake</b> <i>afmfile encodingname</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--findfile</b> <i>filename</i>
+[<b>--recurse</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--fixafmfiles</b> [<i>pattern</i>]
+[<b>--recurse</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--fixtexmftrees</b> [<i>texmfroot</i>]
+[<b>--force</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--hidemapnames</b> [<i>pattern</i>]
+[<b>--recurse</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--mactodos</b> [<i>pattern</i>]
+[<b>--recurse</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Fixes newlines from Macintosh files so that the file is
+readable in DOS.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--removemapnames</b> [<i>pattern</i>]
+[<b>--recurse</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--replacefile</b> <i>filename</i>
+[<b>--force</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--restoremapnames</b> [<i>pattern</i>]
+[<b>--recurse</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--showfont</b> <i>filename</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--stripformfeeds</b> [<b>--recurse</b>]
+[<b>--force</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--tpmmake</b> <i>tpmfile</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Package files into a <i>t-modulename.tpm</i> file.
+Imagine this file structure:</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>tex/context/third/modulename/t-modulename.vim
+doc/context/third/modulename/modulename-doc.pdf
+doc/context/third/modulename/modulename-demo.pdf
+tpm/t-modulename.tpm
+</pre>
+<!-- INDENTATION -->
+<p>where <i>t-modulename.tpm</i> is a valid tpm file. When
+you run</p>
+<!-- INDENTATION -->
+<pre>textools --tpmmake t-modulename
+</pre>
+<!-- INDENTATION -->
+<p>the <b>textools</b> command will replace file sizes
+declared in the tpm file with proper values and create a ZIP
+archive <i>t-modulename.zip</i> with the files specified by
+the tpm file. This command needs to be run in the root of
+the TEXMF tree.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--unzipfiles</b> [<i>pattern</i>]
+[<b>--recurse</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--updatetree</b> <i>fromroot toroot</i> [<b>--force
+--nocheck --merge --delete</b>]</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--videmapnames</b> [<i>pattern</i>]
+[<b>--recurse</b>]</p></td>
+</table>
+<a name="SEE ALSO"></a>
+<h2>SEE ALSO</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>texexec</b>(1), <b>texmfstart</b>(1).</p>
+<!-- INDENTATION -->
+
+<p><a href="http://www.contextgarden.net">ConTeXt wiki</a>.</p>
+</td>
+</table>
+<a name="BUGS"></a>
+<h2>BUGS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>This manual page is incomplete because I have no clue
+what this program does.</p>
+</td>
+</table>
+<a name="AUTHOR"></a>
+<h2>AUTHOR</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>textools</b>(1) is part of the
+<a href="http://www.contextgarden.net">ConTeXt</a> suite of
+typesetting programs based on the <b>tex</b>(1) family of
+typesetting programs. This manual page was written by Sanjoy
+Mahajan &lt;sanjoy@mit.edu&gt; based on running <b>textools
+--help</b> and with help from Mojca Miklavec. It is in the
+public domain.</p>
+</td>
+</table>
+<hr>
+</body>
+</html>

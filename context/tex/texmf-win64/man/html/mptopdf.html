@@ -1,0 +1,228 @@
+<!-- Creator     : groff version 1.19.1 -->
+<!-- CreationDate: Tue Aug 12 16:41:24 2008 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<title>MPTOPDF</title>
+</head>
+<body>
+
+<h1 align=center>MPTOPDF</h1>
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#OPTIONS">OPTIONS</a><br>
+<a href="#USAGE">USAGE</a><br>
+<a href="#SEE ALSO">SEE ALSO</a><br>
+<a href="#AUTHOR">AUTHOR</a><br>
+
+<hr>
+<a name="NAME"></a>
+<h2>NAME</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>mptopdf &minus; convert MetaPost to PDF</p>
+</td>
+</table>
+<a name="SYNOPSIS"></a>
+<h2>SYNOPSIS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>mptopdf</b> <i>FILE</i> [ ... ]</p>
+</td>
+</table>
+<a name="DESCRIPTION"></a>
+<h2>DESCRIPTION</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>mptopdf</b> can convert MetaPost-generated EPS files
+to PDF, or it can process a MetaPost source file directly
+(see <b>mpost</b>(1)) and convert the generated EPS files to
+PDF.</p>
+</td>
+</table>
+<a name="OPTIONS"></a>
+<h2>OPTIONS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>All switches are specified in full here but can be
+abbreviated to the shortest unique prefix. Thus,
+<b>--metaf</b> works the same as <b>--metafun</b>.</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="5" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+<p><b>--help</b></p>
+</td>
+<td width="2%"></td>
+<td width="41%">
+
+<p>Print a terse help message.</p>
+</td>
+<td width="37%">
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--metafun</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Use the metafun pre-compiled format to process the
+MetaPost source file. You usually don&rsquo;t need this
+option, since metafun input is usually produced and
+processed as part of a <b>texexec</b>(1) run. Needs the
+<b>--rawmp</b> switch to take effect.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--rawmp</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Process the source file with <b>mpost</b>(1) directly,
+rather than with <b>texexec</b>(1). This option is needed if
+you want to specify <b>--metafun</b>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--latex</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Typeseting labels using <b>latex</b>(1) rather than plain
+<b>tex</b>(1).</p>
+</td>
+</table>
+<a name="USAGE"></a>
+<h2>USAGE</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>To convert <i>manfig.20</i> to
+<i>manfig-20.pdf:</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="15%"></td>
+<td width="85%">
+<pre>mptopdf manfig.20
+</pre>
+<!-- INDENTATION -->
+<p>You can convert more than one EPS file at once:</p>
+<!-- INDENTATION -->
+<pre>mptopdf manfig.20 otherfig.17 finalfig.8
+</pre>
+<!-- INDENTATION -->
+<p>Or you can give <b>mptopdf</b>(1) a pattern that it will
+expand:</p>
+<!-- INDENTATION -->
+<pre>mptopdf &rsquo;manfig.*&rsquo;
+</pre>
+<!-- INDENTATION -->
+<p>Note the single quotes to protect the * from the shell.
+Of course, usually you can let the shell do the wildcard
+expansion and therefore leave off the quotes.</p>
+<!-- INDENTATION -->
+<p>To convert <i>figs.mp</i> to <i>figs-1.pdf</i>,
+<i>figs-2.pdf</i>, ...</p>
+<!-- INDENTATION -->
+<pre>mptopdf figs.mp
+</pre>
+<!-- INDENTATION -->
+<p>If the labels are typeset with <b>latex</b>(1):</p>
+<!-- INDENTATION -->
+<pre>mptopdf --latex figs.mp
+</pre>
+</td>
+</table>
+<a name="SEE ALSO"></a>
+<h2>SEE ALSO</h2>
+<!-- INDENTATION -->
+
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>tex</b>(1), <b>latex</b>(1), <b>mpost</b>(1),
+<b>pdftex</b>(1), <b>texexec</b>(1).</p>
+<!-- INDENTATION -->
+
+<p><a href="http://www.contextgarden.net">ConTeXt wiki</a>.</p>
+</td>
+</table>
+<a name="AUTHOR"></a>
+<h2>AUTHOR</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>mptopdf</b>(1) is part of the ConTeXt system by Hans
+Hagen et al, which is available from
+<a href="http://www.pragma-ade.com/">PRAGMA ADE</a>. This
+manpage was written by Sanjoy Mahajan &lt;sanjoy@mit.edu&gt;
+and is in the public domain.</p>
+</td>
+</table>
+<hr>
+</body>
+</html>

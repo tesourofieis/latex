@@ -1,0 +1,127 @@
+%\usepackage[utf8]{inputenc}
+\usepackage{xcolor,luacode,luatexbase}
+%% Lua-side code%%
+\usepackage{accents}
+\maxdeadcycles=1000
+%\usepackage{accents2}
+\newcommand{\cruz}{\textcolor{red}{\ding{64} }}
+\usepackage{lettrine}
+\usepackage{luaotfload}
+\usepackage{float}
+\usepackage{array, ragged2e}
+\usepackage{shapepar}
+\usepackage{polyglossia}
+\setmainlanguage{portuges}
+\setotherlanguage{latin}
+\usepackage{scrhack}
+\usepackage{paracol, indentfirst}
+\usepackage{pifont}
+\usepackage{background}
+\usepackage{wrapfig}
+\usepackage{ebgaramond}
+\usepackage{lettrine}
+\usepackage{paralist}
+
+\renewcommand{\contentsname}{Índice}%%INDICE
+\addto\captionsportuges{\renewcommand{\contentsname}{Índice}}
+\usepackage{multicol}
+\BeforeStartingTOC[toc]{\begin{multicols}{2} }
+\AfterStartingTOC[toc]{\end{multicols}}
+\newcommand\chapterentrynumber[1]{\def\autodot{:}\chaptername\ #1}
+\renewcommand\chaptermarkformat{\chaptername\ \thechapter:\enskip}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\setlength{\columnseprule}{0.4pt}
+
+\let\oldfootnoterule\footnoterule
+\def\footnoterule{\oldfootnoterule\vspace{0.25\baselineskip}}
+\usepackage{makeidx}
+\makeindex
+% COR DEFINIDA
+\definecolor{redx}{HTML}{ff0000}
+\newcommand{\redx}[1]{\color{redx} #1}
+
+\usepackage[most]{tcolorbox}%%MOLDURA IMAGENS%%
+\tcbset{myframe/.style={sharp corners,colframe=black,boxrule=0pt,boxsep=0pt,left=0pt,right=0pt,top=0pt,bottom=0pt}}
+
+\usepackage[headsepline]{scrlayer-scrpage}% CABECALHO
+\clearscrheadfoot
+\pagestyle{scrheadings}
+\cohead{\leftmark}
+\cehead{\rightmark}
+\ihead{\pagemark}
+\addtokomafont{pagehead}{\textsc}
+\addtokomafont{pagenumber}{\mdseries\fonte}
+\addtokomafont{disposition}{\textsc}
+\addtokomafont{chapterentry}{\bfseries\textsc}
+\RedeclareSectionCommand[tocindent=0em]{chapter}
+\RedeclareSectionCommand[tocindent=0em]{section}
+
+\usepackage[hang,bottom,para,symbol]{footmisc}% NOTAS RODAPE
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\set@fontsize{#3}{#2}{}{}
+\makeatother
+\setlength{\parindent}{5pt}
+
+\usepackage{color}
+\newfontface\bg{LTC Goudy Initials}
+\newfontface\fg{LTC Goudy Initials Fill}
+\setlength{\DefaultNindent}{0pt}
+\setlength{\DefaultFindent}{4pt}
+\setcounter{DefaultLines}{2}
+%\usepackage{needspace}
+\newcommand{\needspace}[1]{\rule{0pt}{#1}\vspace{-#1}\vspace{-\parskip}\par}
+%\lettrine[lines=4,loversize=-.15,lraise=.15]{{\bg M}\llap{\fg M}}{\redx eu}
+
+\newcommand{\blettrine}[2]{%BIG
+\needspace{4\baselineskip}
+\lettrine[lines=4,loversize=-.25,lraise=.15]{{\bg{\color{black}{#1}}}\llap{\fg{\color{red}{#1}}}}{\textsc{\color{black}#2}}}
+%\lettrine[lines=4,loversize=-.25,lraise=.15]{{\bg #1}\llap{\fg #1}}{\textsc{\color{black}#2}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\rlettrine}[2]{%NORMAL
+\needspace{2\baselineskip}
+\lettrine{\color{red}{#1}}{\textsc{\color{black}#2}}}
+%%%%%%%%%%%%%%%%%%%%
+\newcommand{\qlettrine}[2]{%QJ
+\needspace{2\baselineskip}
+\lettrine[loversize=-.15,lraise=.15]{\color{red}{#1}}{\textsc{\color{black}#2}}}
+%%%%%%%%%%%%%%%%%%%%
+\newcommand{\slettrine}[2]{%SMASH
+\needspace{2\baselineskip}
+\lettrine{\smash {\color{red}{#1}}}{\textsc{\color{black}#2}}}
+%%%%%%%%%%%%%%%%%%%%
+\newcommand{\paralatin}[1]{%
+\latin\noindent\begin{minipage}[t]{\linewidth}#1\end{minipage}}
+%%%%%%%%%%%%%FONT%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%TEXTO LADOALADO%%%%%%%%%%%%%%
+\newcommand{\portugues}[1]{%
+\selectlanguage{portuges}{\portFont{#1\par}}
+}
+\newcommand{\latim}[1]{%
+\selectlanguage{latin}{\latFont{#1\par}}
+}
+%%%%%%%%%%CENTRAR COM POUCO ESPAÇO%%%%%%%%%%%%%%%%%%%
+\newenvironment{nscenter}
+ {\parskip=0pt\par\nopagebreak\centering}
+ {\par\noindent\ignorespacesafterend}
+%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{pdfcolparallel}
+%\usepackage{parallelfiles}
+%\setkeys{parallel}{rulebetweencolor=red}
+\def\triangledownshape{%
+{0}%
+{0}b{0}\\%
+{0}t{-7.5}{15}\\%
+{8.66}t{-5}{10}\\%
+{17.32}e{0}%
+}
+\def\triangledownpar#1{\vspace*{\fill}\noindent%
+     \makebox[\linewidth]{%
+        \Shapepar\triangledownshape#1\unskip\ .\par}\vfill}
+
+\newcommand{\triangulo}{
+\triangledownpar{\Huge\textit{\redx Tesouro dos Fiéis} \huge contém o Missal e o Devocionário dos {\redx Portugueses,} em \textit{Latim} e Português, \textit{com as devoções dos nossos \textbf {Egrégios Avós:}} Pequeno Catecismo, {\redx Saltério Cristão,} \LARGE\textit{Ordinário do {\redx Rito Romano,} e Devoções para Antes e Depois da Santa Missa,} {\redx Te Deum,} \textbf{\textit{Santo Rosário de Nossa Senhora,}} \textit{Via}\textsc{ Sacra,} \Large{\redx Orações de Fátima,} Hinos, \textbf {Ladainhas,} {\redx Orações} aos Nossos Santos, \large\textbf {Pequeno Ofício da Nossa Senhora,} \textsc{\redx Bênçãos,} \textit{Orações Diárias,} \normalsize\textit{Bênção do Santíssimo Sacramento,} {\redx Et Cetera}; \textit{para a preservação do {\redx depósito}} \small {que foi nos foi} \footnotesize{confiado}}
+}

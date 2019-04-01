@@ -1,0 +1,7 @@
+return {
+ ["enginebanner"]="This is LuaTeX, Version 1.09.0 (TeX Live 2018/W32TeX)",
+ ["formatbanner"]="2018.10.18 00:07",
+ ["luaversion"]=5.3,
+ ["sourcefile"]="context.mkiv",
+ ["sourcehash"]="7b00cff9b72cb22807dcca826675856a",
+}

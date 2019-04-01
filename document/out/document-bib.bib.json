@@ -1,0 +1,143 @@
+{
+  "_preamble": "",
+  "_comments": "",
+  "knuth:tex": {
+    "id": "Knuth:TeX",
+    "type": "book",
+    "author": [
+      {
+        "family": "Knuth",
+        "given": "Donald E."
+      }
+    ],
+    "title": "The TeX book",
+    "issued": {
+      "date-parts": [
+        [
+          "1984"
+        ]
+      ]
+    },
+    "publisher": "Addison-Wesley",
+    "_line": "example.bib:1"
+  },
+  "lamport:latex": {
+    "id": "Lamport:LaTeX",
+    "type": "book",
+    "author": [
+      {
+        "family": "Lamport",
+        "given": "Leslie"
+      }
+    ],
+    "title": "LaTeX: A Document Preparation System (2nd Edition)",
+    "issued": {
+      "date-parts": [
+        [
+          "1994"
+        ]
+      ]
+    },
+    "publisher": "Addison-Wesley",
+    "note": "See also [@Knuth:TeX].",
+    "_line": "example.bib:8"
+  },
+  "grandstrand": {
+    "id": "Grandstrand",
+    "type": "chapter",
+    "author": [
+      {
+        "family": "Grandstrand",
+        "given": "O."
+      }
+    ],
+    "editor": [
+      {
+        "family": "Fagerberg",
+        "given": "J."
+      },
+      {
+        "family": "Mowery",
+        "given": "D.C."
+      },
+      {
+        "family": "Nelson",
+        "given": "R.R."
+      }
+    ],
+    "title": "Innovation and Intellectual Property Rights",
+    "container-title": "Oxford Handbook of Innovation",
+    "chapter-number": "10",
+    "issued": {
+      "date-parts": [
+        [
+          "2004"
+        ]
+      ]
+    },
+    "publisher": "Oxford University Press",
+    "publisher-place": "Oxford",
+    "volume": "1",
+    "crossref": "Fberg04",
+    "_line": "example.bib:16"
+  },
+  "fberg04": {
+    "id": "Fberg04",
+    "type": "book",
+    "editor": [
+      {
+        "family": "Fagerberg",
+        "given": "J."
+      },
+      {
+        "family": "Mowery",
+        "given": "D.C."
+      },
+      {
+        "family": "Nelson",
+        "given": "R.R."
+      }
+    ],
+    "title": "Oxford Handbook of Innovation",
+    "issued": {
+      "date-parts": [
+        [
+          "2004"
+        ]
+      ]
+    },
+    "publisher": "Oxford University Press",
+    "publisher-place": "Oxford",
+    "volume": "1",
+    "_line": "example.bib:23"
+  },
+  "goo93": {
+    "id": "Goo93",
+    "type": "book",
+    "author": [
+      {
+        "family": "Goossens",
+        "given": "Michel"
+      },
+      {
+        "family": "Mittelbach",
+        "given": "Frank"
+      },
+      {
+        "family": "Samarin",
+        "given": "Alexander"
+      }
+    ],
+    "title": "The LaTeX Companion",
+    "issued": {
+      "date-parts": [
+        [
+          "1993"
+        ]
+      ]
+    },
+    "publisher": "Addison-Wesley",
+    "publisher-place": "Reading, Massachusetts",
+    "_line": "example.bib:33"
+  }
+}

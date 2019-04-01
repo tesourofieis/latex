@@ -1,0 +1,91 @@
+\usepackage[final,protrusion=true,expansion,tracking=true,stretch=30,shrink=30,factor=1100]{microtype}
+\SetTracking{encoding={*}, shape=sc}{0}
+\usepackage{fontspec}
+\makeatletter
+\def\MT@warn@unknown{}
+\makeatother
+%%%%EMPH%%%%%
+\DeclareTextFontCommand{\emph}{\rmfamily\noindent\color{red}\itshape}
+\newfontfamily\fonte[]{Cardo}
+\usepackage[T1]{fontenc}
+% PARAGRAFOS%
+\linespread{1.2}
+% LIGADURAS%
+\directlua{fonts.protrusions.setups.default.factor=.5}
+\directlua{fonts.handlers.otf.addfeature{
+    name = "liga",type = "ligature",data = {
+      ['f_f'] = { "f", "f" },
+      ['f_i'] = { "f", "i" },
+      ['f_j'] = { "f", "j" },
+      ['f_h'] = { "f", "h" },
+      ['f_l'] = { "f", "l" },
+      ['f_t'] = { "f", "t" },
+      ['f_f_i'] = { "f", "f", "i" },
+      ['f_f_j'] = { "f", "f", "j" },
+      ['f_f_l'] = { "f", "f", "l" },
+      ['T_h'] = { "T", "h" },
+      ['s_t'] = { "s", "t" },
+      ['c_t'] = { "c", "t" },
+      ['c_h'] = { "c", "h" },
+      ['t_t'] = { "t", "t" },
+      ['f_k'] = { "f", "k" },
+    },
+  }}
+%\newfontfamily\latFont[Extension=.otf, BoldFont=Gargoudy-Bold.otf, ItalicFont=Gargoudy-Italic.otf]{Gargoudy-Regular.otf}
+%\newfontfamily\portFont[Extension=.otf, BoldFont=Gargoudy-Bold.otf, ItalicFont=Gargoudy-Italic.otf]{Gargoudy-Regular.otf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defaultfontfeatures{Numbers = OldStyle, SmallCapsFeatures={RawFeature =+smcp,Renderer=Basic}, RawFeature ={-calt,+ss05,+cv91,+swsh}}
+\setmainfont[Extension=.otf, BoldFont=GoudyStd-Bold.otf, ItalicFont=Gargoudy-Italic.otf, ItalicFeatures={Scale=0.9}]{Gargoudy-Regular.otf}
+%\setmainfont[Extension=.otf, BoldFont=GoudyStd-BoldItalic.otf, ItalicFont=GoudyStd-Italic.otf, ItalicFeatures={Scale=1.1}]{Gargoudy-Regular.otf}
+
+%%TITULOS%%%%ORNAMENTOS%%
+\usepackage{adjustbox} % Adjustbox to rescale the ornaments (scalebox breaks titlesec for some reason...)
+\newcommand{\ornA}{% Defining a command to shorten things
+\begin{adjustbox}{max height=0.75\baselineskip}% Rescaling to have height of 0.5\baselineskip
+  \rotatebox{0}{% And rotating 90 degrees
+    %\includegraphics[]{media/ornamentos/0796}
+}\end{adjustbox}}
+
+\renewcommand{\section}[1]{
+\pagebreak[4]\needspace{6\baselineskip}
+{\vspace{0pt}\centering\LARGE\addtocounter{chapter}{1}\addchaptertocentry{}{#1}\addchapmark{#1}\textsc{#1}\par}}
+
+\newcommand{\sectioninfo}[2]{
+\pagebreak[4]\needspace{7\baselineskip}
+{\vspace{0pt}\centering\LARGE\addtocounter{chapter}{1}\addchaptertocentry{}{#1}
+\addchapmark{#1}\textsc{#1}\par
+\centering\normalsize\emph{#2}\par}}
+
+\renewcommand{\subsection}[1]{
+\pagebreak[3]\needspace{5\baselineskip}
+{\returntogrid\centering\Large\addtocounter{section}{2}\addsubsectiontocentry{}{#1}
+\addsecmark{#1}\textsc{\color{red}{#1}}\par}}
+
+\newcommand{\subsectioninfo}[2]{
+\pagebreak[3]\needspace{5\baselineskip}
+{\returntogrid\centering\Large\addtocounter{section}{2}\addsubsectiontocentry{}{#1}
+\addsecmark{#1}\textsc{\color{red}{#1}}\par
+\centering\normalsize\textit{#2}\par\vspace{0pt}}}
+
+\renewcommand{\subsubsection}[1]{
+\pagebreak[2]\needspace{4\baselineskip}
+{\vspace{-0.23\baselineskip}\centering\large
+\addtocounter{subsection}{3}\addsubsubsectiontocentry{}{#1}\addsecmark{#1}
+\textsc{#1}\par}}
+
+\newcommand{\subsubsectioninfo}[2]{
+\pagebreak[2]\needspace{5\baselineskip}
+{\vspace{0pt}\centering\large
+\addtocounter{subsection}{3}\addsubsubsectiontocentry{}{#1}\addsecmark{#1}\textsc{#1}\par
+\centering\normalsize\emph{#2}\par\vspace{0pt}}}
+
+\renewcommand{\paragraph}[1]{
+\pagebreak[2]\needspace{3\baselineskip}
+{\vspace{-0.11\baselineskip}\centering\normalsize\textsc{\color{red}{#1}}\par}}
+
+\newcommand{\paragraphinfo}[2]{
+\pagebreak[2]\needspace{3\baselineskip}
+{\vspace{-0.11\baselineskip}\centering\normalsize\textsc{\color{red}{#1}}
+\centering\normalsize\textit{#2}\par}}
+
+\input{texto/capainterior}

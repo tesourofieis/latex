@@ -1,0 +1,69 @@
+\startenvironment math-layout
+
+\enabledirectives[fontgoodies.mathkerning]
+
+\usebodyfont   [modern]
+\usebodyfont  [cambria]
+\usebodyfont [lucidaot]
+\usebodyfont     [xits]
+\usebodyfont  [stixtwo]
+\usebodyfont   [dejavu]
+\usebodyfont  [pagella]
+\usebodyfont   [termes]
+\usebodyfont    [bonum]
+\usebodyfont   [schola]
+
+\setupbodyfont
+  [pagella]
+
+\setupwhitespace
+  [big]
+
+\setuppagenumbering
+  [alternative=doublesided]
+
+\setuplayout
+  [backspace=2cm,
+   width=middle,
+   cutspace=2cm,
+   topspace=2cm,
+   header=2cm,
+   height=middle,
+   footer=0pt,
+   bottomspace=2cm]
+
+\setuplayout
+  [backspace=2cm,
+   topspace=2cm,
+   header=2cm,
+   height=middle,
+   width=middle]
+
+\definecolor[maincolor] [darkmagenta]
+\definecolor[extracolor][darkyellow]
+
+\setuphead
+  [chapter]
+  [header=high,
+   style=\bfc,
+   color=maincolor]
+
+\setuphead
+  [section]
+  [style=\bfb,
+   color=maincolor]
+
+\setuphead
+  [subsection]
+  [style=\bfa,
+   color=maincolor]
+
+\usemodule[abr-02]
+
+\usemodule[x][setups-basics]
+
+\usemodule[visual]
+
+\loadsetups[i-context]
+
+\stopenvironment

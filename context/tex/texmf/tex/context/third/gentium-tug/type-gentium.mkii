@@ -1,0 +1,85 @@
+%D \module
+%D   [       file=type-gentium,
+%D        version=2013.05.02,
+%D          title=\CONTEXT\ Typescript Macros,
+%D       subtitle=Typescript file for Gentium,
+%D         author={Thomas A. Schmitz, Mojca Miklavec},
+%D           date=\currentdate,
+%D      copyright=Expat License]
+
+%C This file is part of the Gentium package for TeX.
+%C It is licensed under the Expat License, see doc//README for details.
+
+% Typescript for the Gentium font
+
+\ifnum\texengine<\xetexengine
+
+\starttypescript [serif] [gentium] [ec,texnansi,qx,t5,l7x]
+  \definefontsynonym [Gentium-Roman]       [\typescriptthree-gentiumplus-regular]      [encoding=\typescriptthree]
+  \definefontsynonym [Gentium-Italic]      [\typescriptthree-gentiumplus-italic]       [encoding=\typescriptthree]
+  \definefontsynonym [Gentium-Bold]        [\typescriptthree-gentiumbasic-bold]        [encoding=\typescriptthree]
+  \definefontsynonym [Gentium-BoldItalic]  [\typescriptthree-gentiumbasic-bolditalic]  [encoding=\typescriptthree]
+  \definefontsynonym [Gentium-RomanCaps]   [\typescriptthree-gentiumplus-regular-sc]   [encoding=\typescriptthree]
+  \definefontsynonym [Gentium-Slanted]     [Gentium-Italic]
+  \definefontsynonym [Gentium-BoldSlanted] [Gentium-BoldItalic]
+
+\loadmapfile[gentium-\typescriptthree.map]
+\stoptypescript
+
+\starttypescript [serif] [gentium] [agr,t2a]
+  \definefontsynonym [Gentium-Roman]       [\typescriptthree-gentiumplus-regular]    [encoding=\typescriptthree]
+  \definefontsynonym [Gentium-Italic]      [\typescriptthree-gentiumplus-italic]     [encoding=\typescriptthree]
+  \definefontsynonym [Gentium-RomanCaps]   [\typescriptthree-gentiumplus-regular-sc] [encoding=\typescriptthree]
+  \definefontsynonym [Gentium-Bold]        [Gentium-Roman]
+  \definefontsynonym [Gentium-BoldItalic]  [Gentium-Italic]
+  \definefontsynonym [Gentium-Slanted]     [Gentium-Italic]
+  \definefontsynonym [Gentium-BoldSlanted] [Gentium-Italic]
+
+  \loadmapfile[gentium-\typescriptthree.map]
+\stoptypescript
+
+\starttypescript [serif] [gentium] [name]
+  \usetypescript[serif][fallback]
+  \definefontsynonym [Serif]            [Gentium-Roman]
+  \definefontsynonym [SerifItalic]      [Gentium-Italic]
+  \definefontsynonym [SerifBold]        [Gentium-Bold]
+  \definefontsynonym [SerifBoldItalic]  [Gentium-BoldItalic]
+  \definefontsynonym [SerifSlanted]     [Gentium-Slanted]
+  \definefontsynonym [SerifBoldSlanted] [Gentium-BoldSlanted]
+  \definefontsynonym [SerifCaps]        [Gentium-RomanCaps]
+  \definefontsynonym [OldStyle]         [Serif]
+\stoptypescript
+
+\starttypescript [gentium] [ec,texnansi,qx,t5,t2a,agr,l7x]
+  \definetypeface [gentium] [rm] [serif] [gentium] [default] [encoding=\typescripttwo]
+\stoptypescript
+
+\else
+
+\starttypescript [serif] [gentium]
+  \definefontsynonym [Gentium-Roman]       [file:GentiumPlus-R]  [features=default]
+  \definefontsynonym [Gentium-Italic]      [file:GentiumPlus-I]  [features=default]
+  \definefontsynonym [Gentium-Bold]        [file:GenBasB]        [features=default]
+  \definefontsynonym [Gentium-BoldItalic]  [file:GenBasBI]       [features=default]
+  \definefontsynonym [Gentium-Slanted]     [Gentium-Italic]
+  \definefontsynonym [Gentium-BoldSlanted] [Gentium-BoldItalic]
+  \definefontsynonym [Gentium-RomanCaps]   [file:GentiumPlus-R]  [features=smallcaps]
+\stoptypescript
+
+\starttypescript [serif] [gentium] [name]
+  \definefontsynonym [Serif]            [Gentium-Roman]
+  \definefontsynonym [SerifItalic]      [Gentium-Italic]
+  \definefontsynonym [SerifBold]        [Gentium-Bold]
+  \definefontsynonym [SerifBoldItalic]  [Gentium-BoldItalic]
+  \definefontsynonym [SerifSlanted]     [Gentium-Slanted]
+  \definefontsynonym [SerifBoldSlanted] [Gentium-BoldSlanted]
+  \definefontsynonym [SerifCaps]        [Serif]
+  \definefontsynonym [OldStyle]         [Serif]
+  \definefontsynonym [SerifCaps]        [Gentium-RomanCaps]
+\stoptypescript
+
+\starttypescript [gentium]
+  \definetypeface [gentium] [rm] [serif] [gentium] [default] [features=default]
+\stoptypescript
+
+\fi

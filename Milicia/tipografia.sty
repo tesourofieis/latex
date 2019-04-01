@@ -1,0 +1,137 @@
+\usepackage[final,protrusion=true,expansion,tracking=true,stretch=30,shrink=30,factor=1100]{microtype}
+\SetTracking{encoding={*}, shape=sc}{0}
+\usepackage{fontspec}
+\makeatletter
+\def\MT@warn@unknown{}
+\makeatother
+%EMPH%
+\DeclareTextFontCommand{\emph}{\rmfamily\noindent\color{red}\itshape\small}
+\newfontfamily\fonte[]{Cardo}
+
+% PARAGRAFOS%
+\linespread{1.1}
+% LIGADURAS%
+\directlua{fonts.protrusions.setups.default.factor=.5}
+\directlua{fonts.handlers.otf.addfeature{
+    name = "liga",type = "ligature",data = {
+      ['f_f'] = { "f", "f" },
+      ['f_i'] = { "f", "i" },
+      ['f_j'] = { "f", "j" },
+      ['f_h'] = { "f", "h" },
+      ['f_l'] = { "f", "l" },
+      ['f_t'] = { "f", "t" },
+      ['f_f_i'] = { "f", "f", "i" },
+      ['f_f_j'] = { "f", "f", "j" },
+      ['f_f_l'] = { "f", "f", "l" },
+      ['T_h'] = { "T", "h" },
+      ['s_t'] = { "s", "t" },
+      ['c_t'] = { "c", "t" },
+      ['c_h'] = { "c", "h" },
+      ['t_t'] = { "t", "t" },
+      ['f_k'] = { "f", "k" },
+    },
+  }}
+%\newfontfamily\latFont[Path=C:/Windows/Fonts/, Extension=.otf, BoldFont=Gargoudy-Bold_0.otf, ItalicFont=Gargoudy-Italic_1.otf]{Gargoudy-Regular_F.otf}
+%\newfontfamily\portFont[Path=C:/Windows/Fonts/, Extension=.otf, BoldFont=Gargoudy-Bold_0.otf, ItalicFont=Gargoudy-Italic_1.otf]{Gargoudy-Regular_F.otf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\defaultfontfeatures{Numbers = OldStyle, SmallCapsFeatures={RawFeature =+smcp,Renderer=Basic}, RawFeature ={-calt,+ss05,+cv91,+swsh}}
+%\setmainfont[Path=C:/Windows/Fonts/, Extension=.otf, BoldFont=Gargoudy-Bold_0.otf, ItalicFont=Gargoudy-Italic_1.otf]{Gargoudy-Regular_F.otf}
+
+%%TITULOS%%%%ORNAMENTOS%%
+\usepackage{adjustbox} % Adjustbox to rescale the ornaments (scalebox breaks titlesec for some reason...)
+\newcommand{\ornA}{% Defining a command to shorten things
+\begin{adjustbox}{max height=0.75\baselineskip}% Rescaling to have height of 0.5\baselineskip
+  \rotatebox{0}{% And rotating 90 degrees
+    %\includegraphics[]{media/ornamentos/0796}
+  }%
+\end{adjustbox}%
+}
+
+\newcommand{\ornB}{% Defining a command to shorten things
+\begin{adjustbox}{max height=0.75\baselineskip}% Rescaling to have height of 0.5\baselineskip
+  \rotatebox{0}{% And rotating 90 degrees
+    %\includegraphics[]{media/ornamentos/d}
+  }%
+\end{adjustbox}%
+}
+\newcommand{\ornC}{% Defining a command to shorten things
+\begin{adjustbox}{max height=0.75\baselineskip}% Rescaling to have height of 0.5\baselineskip
+  \rotatebox{0}{% And rotating 90 degrees
+    %\includegraphics[]{media/ornamentos/0786}
+  }%
+\end{adjustbox}%
+}
+
+\newcommand{\titulo}[1]{
+\pagebreak[4]
+\needspace{6\baselineskip}
+  {\vspace{-8pt}\begin{center}\LARGE\ornA\hspace{10pt}% Adding a space to the text
+  \addtocounter{chapter}{0}\addchaptertocentry{}{#1}%
+  \addchapmark{#1}\textsc{#1}% The actual chapter name
+  \hspace{10pt}\scalebox{-1}[1]{\ornA}\vspace{-10pt}% and a 180 degree rotated version of the ornament
+    \end{center}
+}}
+
+\renewcommand{\section}[1]{
+\pagebreak[4]
+\needspace{6\baselineskip}
+  {\vspace{-8pt}\begin{center}\LARGE\ornB\hspace{10pt}% Adding a space to the text
+  \addtocounter{chapter}{0}\addchaptertocentry{}{#1}%
+  \addchapmark{#1}\textsc{#1}% The actual chapter name
+  \hspace{10pt}\scalebox{-1}[1]{\ornB}\vspace{-10pt}% and a 180 degree rotated version of the ornament
+    \end{center}
+}}
+
+\newcommand{\sectioninfo}[2]{
+\pagebreak[4]
+\needspace{7\baselineskip}
+  {\vspace{-8pt}\begin{center}\LARGE
+    \ornC% Inserting the ornament
+    \hspace{10pt}% Adding a space to the text
+    \addtocounter{chapter}{0}\addchaptertocentry{}{#1}
+    \addchapmark{#1}\textsc{#1}
+    \hspace{10pt}% Another space after the title
+    \scalebox{-1}[1]{\ornC}% and a 180 degree rotated version of the ornament
+    \par\emph{#2}
+    \vspace{-10pt}\end{center}
+}}
+
+\renewcommand{\subsection}[1]{
+\pagebreak[3]
+\needspace{5\baselineskip}
+  {\vspace{-6pt}\begin{center}\Large
+  \addtocounter{section}{1}\addsectiontocentry{}{#1}
+  \addsecmark{#1}\textsc{#1}
+    \vspace{-8pt}\end{center}
+}}
+
+\newcommand{\subsectioninfo}[2]{
+\pagebreak[3]
+\needspace{6\baselineskip}
+  {\vspace{-6pt}\begin{center}\Large
+  \addtocounter{section}{1}\addsectiontocentry{}{#1}
+  \addsecmark{#1}\textsc{#1}
+    \par\emph{#2}\vspace{-8pt}\end{center}
+}}
+
+\renewcommand{\subsubsection}[1]{
+\pagebreak[2]
+\needspace{4\baselineskip}
+  {\vspace{-6pt}\begin{center}\large
+    \textsc{\color{red}{#1}}
+    \vspace{-8pt}\end{center}
+}}
+
+\newcommand{\subsubsectioninfo}[2]{
+\pagebreak[2]
+\needspace{5\baselineskip}
+  {\vspace{-6pt}\begin{center}\large
+    \textsc{\color{red}{#1}}
+    \emph{#2}\vspace{-8pt}\end{center}
+}}
+
+\renewcommand{\paragraph}[1]{
+\normalsize\emph{#1}
+}
+
+%\input{texto/capainterior}

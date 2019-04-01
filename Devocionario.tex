@@ -1,0 +1,98 @@
+\documentclass[a5paper,10pt]{scrbook}
+
+%\settypeblocksize{0.9\stockheight}{0.9\stockwidth}{*}
+%listof=totoc,toc=indent
+%\KOMAoptions{toc=indentunnumbered}
+%\usepackage[paperwidth=110mm, paperheight=170mm, footnotesep=2\baselineskip, twoside, top=4mm, bottom=5mm, left=7mm,right=7mm, headsep=1mm, foot=2mm, includeheadfoot,heightrounded,showcrop,nomarginpar]{geometry}
+\usepackage[footnotesep=2\baselineskip, twoside, top=10mm, bottom=12mm, left=11mm,right=11mm, headsep=1mm, foot=2mm, includeheadfoot, heightrounded, nomarginpar]{geometry}
+
+\usepackage{returntogrid,tikz}
+\AddToShipoutPictureBG {\AtTextUpperLeft{\showdebugpagegrid}}
+
+\raggedbottom
+
+\usepackage{opcdevocionario}%%%DEFINICOES%%%
+\usepackage{tipografia}
+
+\usepackage[autocompile]{gregoriotex}
+
+\setkomafont{subject}{\scshape}
+\setkomafont{title}{\Huge}
+\setkomafont{subtitle}{\scshape\color{red}}
+\setkomafont{author}{\scshape}
+\setkomafont{date}{\itshape\color{red}}
+
+\setkomafont{chapter}{\normalfont\Large\scshape}
+\renewcommand*{\raggedchapter}{\centering}
+
+\usepackage{adforn} %providing ornaments
+\RedeclareSectionCommand[style=section,indent=0pt,beforeskip=-2\baselineskip]{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+\pagenumbering{roman}
+
+%\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.92\pagewidth, height=0.94\pageheight]{media/frame6}}}
+
+\begin{titlepage}
+\begin{center}
+\topskip0pt
+\vspace*{\fill}
+\includegraphics[width=0.3\pagewidth]{media/oliveira/logo_branco}\par
+{\large Tesouro dos Fiéis\par}
+{\huge DEVOCIONÁRIO\par}
+{\Large Tradicional\par}
+\vspace*{\fill}
+\end{center}
+\end{titlepage}
+
+\newpage
+
+\newpage
+
+\begin{center}
+\topskip0pt
+\vspace*{\fill}
+{\large Tesouro dos Fiéis\par}
+{\huge DEVOCIONÁRIO\par}
+{\Large Tradicional\par}
+\vspace*{\fill}
+\includegraphics[width=0.5\pagewidth]{media/oliveira/logo_vertical_branco}\par
+\vspace*{\fill}
+{\large Viseu 2019\par}
+\vspace*{\fill}
+\end{center}
+
+%\triangulo
+
+\sloppy%Justifica texto
+\pretolerance=-1
+\tolerance=3000
+\adjdemerits=6400
+\doublehyphendemerits=8000000
+\finalhyphendemerits=14400
+\hbadness=99999
+
+\lineskiplimit=-12pt
+\lineskip=0pt
+
+%\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.9\pagewidth, height=0.94\pageheight]{media/frame6}}}
+
+\newpage\tableofcontents% INDEX
+
+\columnratio{0.47}
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{3mm}
+\colseprulecolor{red}
+
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+
+\pagenumbering{arabic}
+
+%\input{texto/salterio}
+%\input{texto/oficio}
+%\input{texto/adoracao}
+\newpage\input{texto/estruturadevocionario}
+
+\end{document}

@@ -1,0 +1,205 @@
+\environment math-layout
+
+\usemodule[fonts-features]
+
+\startcomponent math-features
+
+\startchapter[title=Features]
+
+\startsection[title=Default features]
+
+Math fonts are loaded in so called basemode, which gives them a traditional
+treatment in the engine. However, we do support features in basemode too, so
+setting them can influence what gets passed to \TEX. Also, in math mode, some
+font features (like \type {dtls} and stylistic alternates) are applied
+dynamically.
+
+The default \type {mathematics} feature set is as follows:
+
+\showfeatureset[name=mathematics]
+
+We don't discuss the exact meaning of these options here because normally you
+don't have to deal with them. If a math font demands something special, the place
+to deal with it is the related font goodie file.
+
+This feature set is the parent of two other sets: \type {mathematics-l2r} and
+\type {mathematics-r2l}:
+
+\showfeatureset[name=mathematics-l2r]
+
+This one is the same as the parent but the right|-|to|-|left variant is
+different:
+
+\showfeatureset[name=mathematics-r2l]
+
+Eventually we need size related feature sets and again we define a parent and
+direction specific ones: \type {math-text}, \type {math-script} and \type
+{math-scriptscript}.
+
+\showfeatureset[name=math-text]
+\showfeatureset[name=math-script]
+\showfeatureset[name=math-scriptscript]
+
+The left|-|to|-|right sets \type {math-*-l2r} are:
+
+\showfeatureset[name=math-text-l2r]
+\showfeatureset[name=math-script-l2r]
+\showfeatureset[name=math-scriptscript-l2r]
+
+The right|-|to|-|left sets \type {math-*-r2l} are:
+
+\showfeatureset[name=math-text-r2l]
+\showfeatureset[name=math-script-r2l]
+\showfeatureset[name=math-scriptscript-r2l]
+
+There are a few extra sets defined but these are meant for testing or virtual
+math fonts. The reason for showing these sets is to make clear that the number of
+features is minimal and that math is a real script indeed.
+
+The \type {kern} features is questionable. In traditional \TEX\ there are kerns
+indeed but in \OPENTYPE\ math kerns are not used that way because a more advanced
+kerning feature is present (and that one is currently always enabled). We used to
+set the following but these make no sense.
+
+\starttyping
+liga=yes, % (traditional) ligatures
+tlig=yes, % tex ligatures, like -- and ---
+trep=yes, % tex replacements, like the ' quote
+\stoptyping
+
+Math fonts normally have no ligatures and supporting the \TEX\ specific ones can
+actually be annoying. So, in todays \CONTEXT\ these are no longer enabled. Just
+consider the following:
+
+\startbuffer
+$- \kern0pt -   \kern 0pt \mathchar"2D$
+$- \kern0pt --  \kern 0pt \mathchar"2D \mathchar"2D$
+$- \kern0pt --- \kern 0pt \mathchar"2D \mathchar"2D \mathchar"2D$
+\stopbuffer
+
+\typebuffer
+
+The \type {-} is mapped onto a minus sign and therefore several in succession
+become multiple minus signs. The \type {\mathchar"2D} will remain the character
+with that slot in the font so there we will see a hyphen. If we would enable the
+\type {tlig} feature several such characters would be combined into an endash or
+emdash. So how do we get these than? Because getting a hyphen directly involves a
+command, the same is true for its longer relatives: \type {\endash} and \type
+{\emdash}.
+
+\startlines
+\getbuffer
+\stoplines
+
+As convenience we have defined a special \type {\mathhyphen} command. Watch the
+fact that a text hyphen in math mode is a minus in math! As comparison we also
+show the plus sign.
+
+\starttabulate[||c|c|]
+\BC command            \BC math          \BC text        \NC \NR
+\TB
+\NC \type{\mathhyphen} \NC $\mathhyphen$ \NC \mathhyphen \NC \NR
+\NC \type{\texthyphen} \NC $\texthyphen$ \NC \texthyphen \NC \NR
+\NC \type{-}           \NC $-$           \NC -           \NC \NR
+\NC \type{+}           \NC $+$           \NC +           \NC \NR
+\NC \type{\endash}     \NC $\endash$     \NC \endash     \NC \NR
+\NC \type{\emdash}     \NC $\emdash$     \NC \emdash     \NC \NR
+\stoptabulate
+
+\stoptabulate
+
+\stopsection
+
+\startsection[title=Stylistic alternates]
+
+    {\em todo}
+
+\stopsection
+
+\startsection[title=Dotless variants]
+
+    {\em todo}
+
+\stopsection
+
+\startsection[title=Script kerning]
+
+Text in math is somewhat special. First of all, a math font is not a text fonts
+because the characters and glyphs have a different purpose. Text features are
+normally not present (and often not even wanted). Anyway, you can force a text
+font, but that doesn't mean you will get for instance kerning. You can force a
+box which in turn will trigger font processing, but then you normally loose the
+script related size properties. So we end up with some juggling possibly combined
+with user intervention, and that is what the \type {\text} macro does.
+
+But still there is the kern between a variable and its subscript to consider,
+something that normally is dealt with with staircase kerns, an \OPENTYPE\ math
+speciality. But, as we progress over the math list, and we bind a subscript to a
+variable, that subscript can be anything: a simple character, or more characters
+(a list) or something wrapped in a box. There is simply no universal solution
+that we can hard code because sometimes you don't want that special kerning. This
+is why in \LUATEX\ the integer variable \type {\mathscriptboxmode} controls the
+way this is dealt with.
+
+\starttabulate[|l|p|]
+\NC \type {0} \NC forget about kerning \NC \NR
+\NC \type {1} \NC kern math sub lists with a valid glyph (default in the engine) \NC \NR
+\NC \type {2} \NC also kern math sub boxes that have a valid glyph (default in \CONTEXT) \NC \NR
+\NC \type {3} \NC only kern math sub boxes with a boundary node present \NC \NR
+\stoptabulate
+
+Here we show some examples of how this parameter controls kerning. Watch the
+difference between a simple font switch and a text wrapped in a box. There are
+differences between fonts: some fonts have kerns, some don't. When present kerns
+are passed to the engine without further user intervention.
+
+\startbuffer[1]
+    $T_{\tf fluff}$
+\stopbuffer
+
+\startbuffer[2]
+    $T_{\text{fluff}}$
+\stopbuffer
+
+\startbuffer[3]
+    $T_{\text{\boundary1 fluff}}$
+\stopbuffer
+
+\unexpanded\def\Show#1#2#3%
+  {\doifelsenothing{#3}
+     {\typeinlinebuffer[#1]}
+     {\doifelse{#3}{-}
+        {\type{mode #2}}
+        {\switchtobodyfont[#3,big]\setstrut\strut\showfontkerns\showglyphs\mathscriptboxmode#2\relax\inlinebuffer[#1]}}}
+
+% \starttabulate[|lT|c|c|c|c|c|]
+%     \NC          \NC \Show{1}{0}{}         \NC\Show{1}{1}{}         \NC \Show{2}{1}{}         \NC \Show{2}{2}{}         \NC \Show{3}{3}{}         \NC \NR
+%     \NC          \NC \Show{1}{0}{-}        \NC\Show{1}{1}{-}        \NC \Show{2}{1}{-}        \NC \Show{2}{2}{-}        \NC \Show{3}{3}{-}        \NC \NR
+%     \NC modern   \NC \Show{1}{0}{modern}   \NC\Show{1}{1}{modern}   \NC \Show{2}{1}{modern}   \NC \Show{2}{2}{modern}   \NC \Show{3}{3}{modern}   \NC \NR
+%     \NC lucidaot \NC \Show{1}{0}{lucidaot} \NC\Show{1}{1}{lucidaot} \NC \Show{2}{1}{lucidaot} \NC \Show{2}{2}{lucidaot} \NC \Show{3}{3}{lucidaot} \NC \NR
+%     \NC pagella  \NC \Show{1}{0}{pagella}  \NC\Show{1}{1}{pagella}  \NC \Show{2}{1}{pagella}  \NC \Show{2}{2}{pagella}  \NC \Show{3}{3}{pagella}  \NC \NR
+%     \NC cambria  \NC \Show{1}{0}{cambria}  \NC\Show{1}{1}{cambria}  \NC \Show{2}{1}{cambria}  \NC \Show{2}{2}{cambria}  \NC \Show{3}{3}{cambria}  \NC \NR
+%     \NC dejavu   \NC \Show{1}{0}{dejavu}   \NC\Show{1}{1}{dejavu}   \NC \Show{2}{1}{dejavu}   \NC \Show{2}{2}{dejavu}   \NC \Show{3}{3}{dejavu}   \NC \NR
+% \stoptabulate
+
+\def\ShowMore#1#2%
+  {\subsubject{\Show{#1}{#2}{} (\Show{#1}{#2}{-})}
+   \starttabulate[|lT|c|c|c|c|c|]
+     \NC modern   \NC \Show{#1}{#2}{modern}   \NC \NR
+     \NC lucidaot \NC \Show{#1}{#2}{lucidaot} \NC \NR
+     \NC pagella  \NC \Show{#1}{#2}{pagella}  \NC \NR
+     \NC cambria  \NC \Show{#1}{#2}{cambria}  \NC \NR
+     \NC dejavu   \NC \Show{#1}{#2}{dejavu}   \NC \NR
+   \stoptabulate}
+
+\ShowMore{1}{0}
+\ShowMore{1}{1}
+\ShowMore{2}{1}
+\ShowMore{2}{2}
+\ShowMore{3}{3}
+
+\stopsection
+
+\stopchapter
+
+\stopcomponent

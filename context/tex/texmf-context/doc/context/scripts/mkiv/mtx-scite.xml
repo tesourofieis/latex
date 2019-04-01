@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<application>
+ <metadata>
+  <entry name="name">mtx-scite</entry>
+  <entry name="detail">Scite Helper Script</entry>
+  <entry name="version">1.00</entry>
+ </metadata>
+ <flags>
+  <category name="basic">
+   <subcategory>
+    <flag name="words"><short>convert spell-*.txt into spell-*.lua</short></flag>
+    <flag name="tree"><short>converts a tree into an html tree (--source --target --numbers)</short></flag>
+    <flag name="file"><short>converts a file into an html tree (--source --target --numbers --lexer)</short></flag>
+   </subcategory>
+  </category>
+ </flags>
+</application>

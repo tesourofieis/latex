@@ -1,0 +1,15 @@
+\begin{luacode}
+function highlight ( line )
+   line = string.gsub ( line, "℣.", "\\textcolor{red}{%0}" )
+   line = string.gsub ( line, "℟.", "\\textcolor{red}{%0}" )
+   line = string.gsub ( line, "℞", "\\textcolor{red}℟" )
+   line = string.gsub ( line, "Orémus.", "\\textcolor{red}{%0}" )
+   line = string.gsub ( line, "Oremos.", "\\textcolor{red}{%0}" )
+
+   line = string.gsub ( line, "ǿ", "œ" )
+
+return line
+end
+luatexbase.add_to_callback ( "process_input_buffer",
+       highlight, "highlight" )
+\end{luacode}

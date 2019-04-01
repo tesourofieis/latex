@@ -1,0 +1,31 @@
+\documentclass[paper=a5,10pt,openany]{scrbook}
+\usepackage[footnotesep=1.5\baselineskip,twoside, top=0.06\paperheight, bottom=0.06\paperheight, left=0.125\paperwidth,
+right=0.125\paperwidth, headsep=0.02\paperheight, foot=0.01\paperheight, bindingoffset=0\paperheight,heightrounded,includeheadfoot]{geometry}
+
+\usepackage{background}
+
+\parskip=0pt
+\raggedbottom
+\usepackage{opcdevocionario}%%%DEFINICOES%%%
+\usepackage{tipografia}
+
+\usepackage[autocompile]{gregoriotex} % for gregorio score inclusion
+
+\setkomafont{subject}{\scshape}
+\setkomafont{title}{\Huge}
+\setkomafont{subtitle}{\scshape\color{red}}
+\setkomafont{author}{\scshape}
+\setkomafont{date}{\itshape\color{red}}
+
+\setkomafont{chapter}{\normalfont\Large\scshape}
+\renewcommand*{\raggedchapter}{\centering}
+
+\begin{document}%%%DOC%%%
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=1.1\textwidth, height=1.1\textheight]{media/frame6}}}
+
+\begin{titlepage}
+\input{texto/hinos/vexillaregis}
+\end{titlepage}
+
+\end{document}

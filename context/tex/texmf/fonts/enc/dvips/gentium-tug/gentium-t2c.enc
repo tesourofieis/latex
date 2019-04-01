@@ -1,0 +1,276 @@
+% This file is part of the Gentium package for TeX.
+% It is licensed under the Expat License, see doc//README for details.
+/gentium-t2cEncoding[
+% 0x00
+/grave
+/acute
+/circumflex
+/tilde
+/dieresis
+/hungarumlaut
+/ring
+/caron
+/breve
+/macron
+/dotaccent
+/cedilla
+/ogonek
+/uni04C0
+/angleleft
+/angleright
+% 0x10
+/quotedblleft
+/quotedblright
+/uni0311 % /cyrflex
+/uni030F % /dblgrave
+/uni0306 % /cyrbreve
+/endash
+/emdash
+/uni200C
+/.notdef % perthousandzero
+/dotlessi
+/uni0237 % dotlessj
+/ff
+/fi
+/fl
+/ffi
+/ffl
+% 0x20
+/uni2423
+/exclam
+/quotedbl
+/numbersign
+/dollar
+/percent
+/ampersand
+/quoteright
+/parenleft
+/parenright
+/asterisk
+/plus
+/comma
+/hyphen
+/period
+/slash
+% 0x30
+/zero
+/one
+/two
+/three
+/four
+/five
+/six
+/seven
+/eight
+/nine
+/colon
+/semicolon
+/less
+/equal
+/greater
+/question
+% 0x40
+/at
+/A
+/B
+/C
+/D
+/E
+/F
+/G
+/H
+/I
+/J
+/K
+/L
+/M
+/N
+/O
+% 0x50
+/P
+/Q
+/R
+/S
+/T
+/U
+/V
+/W
+/X
+/Y
+/Z
+/bracketleft
+/backslash
+/bracketright
+/asciicircum
+/underscore
+% 0x60
+/quoteleft
+/a
+/b
+/c
+/d
+/e
+/f
+/g
+/h
+/i
+/j
+/k
+/l
+/m
+/n
+/o
+% 0x70
+/p
+/q
+/r
+/s
+/t
+/u
+/v
+/w
+/x
+/y
+/z
+/braceleft
+/bar
+/braceright
+/asciitilde
+/hyphen % HANGING HYPHEN
+% 0x80
+/uni04A6
+/uni04B4
+/uni04AC
+/uni0494
+/uni04BA
+/.notdef % CYRILLIC CAPITAL LETTER ER WITH DESCENDER
+/uni048E
+/uni04E0
+/uni04CD % CYRILLIC CAPITAL LETTER EM WITH TAIL (instead of DESCENDER)
+/uni049A
+/uni04C5 % CYRILLIC CAPITAL LETTER EL WITH TAIL (instead of DESCENDER)
+/uni049E
+/uni0512
+/uni04A2
+/.notdef % CYRILLIC CAPITAL LETTER EM WITH HOOK
+/uni04C7
+% 0x90
+/uni04E8
+/uni04BC
+/uni04BE
+/uni048C
+/uni048A % CYRILLIC CAPITAL LETTER SHORT I WITH TAIL (instead of DESCENDER)
+/uni04B2
+/uni040F
+/uni04A8
+/uni04B6
+/.notdef % CYRILLIC CAPITAL LETTER EN WITH LEFT HOOK
+/uni04D8
+/.notdef % CYRILLIC CAPITAL LETTER ER WITH HOOK
+/uni0401
+/uni2116
+/currency
+/section
+% 0xA0
+/uni04A7
+/uni04B5
+/uni04AD
+/uni0495
+/uni04BB
+/.notdef % CYRILLIC SMALL LETTER ER WITH DESCENDER
+/uni048F
+/uni04E1
+/uni04CE % CYRILLIC SMALL LETTER EM WITH TAIL (instead of DESCENDER)
+/uni049B
+/uni04C6 % CYRILLIC SMALL LETTER EL WITH TAIL (instead of DESCENDER)
+/uni049F
+/uni0513
+/uni04A3
+/.notdef % CYRILLIC SMALL LETTER EM WITH HOOK
+/uni04C8
+% 0xB0
+/uni04E9
+/uni04BD
+/uni04BF
+/uni048D
+/uni048B % CYRILLIC SMALL LETTER SHORT I WITH TAIL (instead of DESCENDER)
+/uni04B3
+/uni045F
+/uni04A9
+/uni04B7
+/.notdef % CYRILLIC SMALL LETTER EN WITH LEFT HOOK
+/uni04D9
+/.notdef % CYRILLIC SMALL LETTER ER WITH HOOK
+/uni0451
+/quotedblbase
+/guillemotleft
+/guillemotright
+% 0xC0
+/uni0410
+/uni0411
+/uni0412
+/uni0413
+/uni0414
+/uni0415
+/uni0416
+/uni0417
+/uni0418
+/uni0419
+/uni041A
+/uni041B
+/uni041C
+/uni041D
+/uni041E
+/uni041F
+% 0xD0
+/uni0420
+/uni0421
+/uni0422
+/uni0423
+/uni0424
+/uni0425
+/uni0426
+/uni0427
+/uni0428
+/uni0429
+/uni042A
+/uni042B
+/uni042C
+/uni042D
+/uni042E
+/uni042F
+% 0xE0
+/uni0430
+/uni0431
+/uni0432
+/uni0433
+/uni0434
+/uni0435
+/uni0436
+/uni0437
+/uni0438
+/uni0439
+/uni043A
+/uni043B
+/uni043C
+/uni043D
+/uni043E
+/uni043F
+% 0xF0
+/uni0440
+/uni0441
+/uni0442
+/uni0443
+/uni0444
+/uni0445
+/uni0446
+/uni0447
+/uni0448
+/uni0449
+/uni044A
+/uni044B
+/uni044C
+/uni044D
+/uni044E
+/uni044F
+] def

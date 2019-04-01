@@ -1,0 +1,51 @@
+% author    : Hans Hagen
+% copyright : PRAGMA ADE & ConTeXt Development Team
+% license   : Creative Commons Attribution ShareAlike 4.0 International
+% reference : pragma-ade.nl | contextgarden.net | texlive (related) distributions
+% origin    : the ConTeXt distribution
+%
+% comment   : Because this manual is distributed with TeX distributions it comes with a rather
+%             liberal license. We try to adapt these documents to upgrades in the (sub)systems
+%             that they describe. Using parts of the content otherwise can therefore conflict
+%             with existing functionality and we cannot be held responsible for that. Many of
+%             the manuals contain characteristic graphics and personal notes or examples that
+%             make no sense when used out-of-context.
+%
+% comment   : Some chapters might have been published in TugBoat, the NTG Maps, the ConTeXt
+%             Group journal or otherwise. Thanks to the editors for corrections. Also thanks
+%             to users for testing, feedback and corrections.
+
+\setupbackend[export=yes]
+
+\environment workflows-style
+
+\startdocument
+  [metadata:author=Hans Hagen,
+   metadata:title=Workflow support in context,
+   author=Hans Hagen,
+   affiliation=PRAGMA ADE,
+   location=Hasselt NL,
+   title=workflow,
+   extra=support in context,
+   support=www.contextgarden.net,
+   website=www.pragma-ade.nl]
+
+\component workflows-titlepage
+
+\startfrontmatter
+    \component workflows-contents
+    \component workflows-introduction
+\stopfrontmatter
+
+\startbodymatter
+    \component workflows-running
+    \component workflows-resources
+    \component workflows-graphics
+    \component workflows-suspects
+    \component workflows-injectors
+    \component workflows-xml
+    \component workflows-setups
+    \component workflows-synctex
+\stopbodymatter
+
+\stopdocument

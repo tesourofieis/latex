@@ -1,0 +1,22 @@
+~ begin bibliography { .bib-numeric; cite-style:"numeric:'[',']',', '" ; caption:"5" ; data-style:"numeric" ; data-style:'madoko-numeric';  }
+~ begin bibitem {id:"Fberg04"; cite-year:"2004"; cite-authors:"Fagerberg et al."; cite-authors-long:"Fagerberg et al."; cite-label:"1"; caption:"Oxford Handbook of Innovation&nl;Fagerberg et al., 2004"; data-line:"example.bib:23"; searchterm:"Oxford%20Handbook%20of%20Innovation%20Fagerberg%20et%20al.%2C%202004"; spellcheck:"false"; bibitem-label:"\[1\]"}
+\/J.&nbsp;Fagerberg, D.C.&nbsp;Mowery, and R.R.&nbsp;Nelson, editors. _Oxford Handbook of Innovation_. Volume 1. Oxford University Press, Oxford. 2004.
+~ end bibitem
+
+~ begin bibitem {id:"Goo93"; cite-year:"1993"; cite-authors:"Goossens et al."; cite-authors-long:"Goossens, Mittelbach, and Samarin"; cite-label:"2"; caption:"The LaTeX Companion&nl;Goossens, Mittelbach, and Samarin, 1993"; data-line:"example.bib:33"; searchterm:"The%20LaTeX%20Companion%20Goossens%2C%20Mittelbach%2C%20and%20Samarin%2C%201993"; spellcheck:"false"; bibitem-label:"\[2\]"}
+\/Michel Goossens, Frank Mittelbach, and Alexander Samarin. _The LaTeX Companion_. Addison-Wesley, Reading, Massachusetts. 1993.
+~ end bibitem
+
+~ begin bibitem {id:"Grandstrand"; cite-year:"2004"; cite-authors:"Grandstrand"; cite-authors-long:"Grandstrand"; cite-label:"3"; caption:"Innovation and Intellectual Property Rights&nl;Grandstrand, 2004"; data-line:"example.bib:16"; searchterm:"Innovation%20and%20Intellectual%20Property%20Rights%20Grandstrand%2C%202004"; spellcheck:"false"; bibitem-label:"\[3\]"}
+\/O.&nbsp;Grandstrand. &ldquo;Innovation and Intellectual Property Rights,&rdquo; in @Fberg04, volume 1, chapter 10. 2004.
+~ end bibitem
+
+~ begin bibitem {id:"Knuth:TeX"; cite-year:"1984"; cite-authors:"Knuth"; cite-authors-long:"Knuth"; cite-label:"4"; caption:"The TeX book&nl;Knuth, 1984"; data-line:"example.bib:1"; searchterm:"The%20TeX%20book%20Knuth%2C%201984"; spellcheck:"false"; bibitem-label:"\[4\]"}
+\/Donald E.&nbsp;Knuth. _The TeX Book_. Addison-Wesley. 1984.
+~ end bibitem
+
+~ begin bibitem {id:"Lamport:LaTeX"; cite-year:"1994"; cite-authors:"Lamport"; cite-authors-long:"Lamport"; cite-label:"5"; caption:"LaTeX: A Document Preparation System (2nd Edition)&nl;Lamport, 1994"; data-line:"example.bib:8"; searchterm:"LaTeX%3A%20A%20Document%20Preparation%20System%202nd%20Edition%20Lamport%2C%201994"; spellcheck:"false"; bibitem-label:"\[5\]"}
+\/Leslie Lamport. _LaTeX: A Document Preparation System (2nd Edition)_. Addison-Wesley. 1994. See also [@Knuth:TeX].
+~ end bibitem
+
+~ end bibliography

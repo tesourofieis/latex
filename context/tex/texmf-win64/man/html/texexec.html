@@ -1,0 +1,2096 @@
+<!-- Creator     : groff version 1.19.1 -->
+<!-- CreationDate: Tue Aug 12 16:41:23 2008 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<title>TEXEXEC</title>
+</head>
+<body>
+
+<h1 align=center>TEXEXEC</h1>
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#OPTIONS">OPTIONS</a><br>
+<a href="#USAGE">USAGE</a><br>
+<a href="#EXAMPLES">EXAMPLES</a><br>
+<a href="#INITIALIZATION">INITIALIZATION</a><br>
+<a href="#SEE ALSO">SEE ALSO</a><br>
+<a href="#AUTHOR">AUTHOR</a><br>
+
+<hr>
+<a name="NAME"></a>
+<h2>NAME</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>texexec &minus; front end to the ConTeXt typesetting
+system</p>
+</td>
+</table>
+<a name="SYNOPSIS"></a>
+<h2>SYNOPSIS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>texexec</b> [ <i>OPTION</i> ... ] <i>FILE</i> [ ...
+]</p>
+</td>
+</table>
+<a name="DESCRIPTION"></a>
+<h2>DESCRIPTION</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>texexec</b>, a <b>ruby</b>(1) script, is the
+command-line front end to the ConTeXt typesetting system, an
+extensive macro package built on the <b>tex</b>(1) family of
+typesetting programs. <b>texexec</b> provides several
+facilties:</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>&bull;</p>
+</td>
+<td width="10%"></td>
+<td width="78%">
+
+<p>Process a ConTeXt source file, performing as many runs
+as necessary of <b>tex</b>(1), <b>texutil</b>(1), and
+MetaPost (<b>mpost</b>(1)). Options control the output
+format, the pages to process, paper size, and so forth.</p>
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>&bull;</p>
+</td>
+<td width="10%"></td>
+<td width="78%">
+
+<p>Create new ConTeXt formats, useful during
+installation.</p>
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>&bull;</p>
+</td>
+<td width="10%"></td>
+<td width="78%">
+
+<p>Post-process existing PDF files, including merging
+multiple files, and extracting and rearranging pages within
+a file, similar to the facilities provided for PostScript
+files by <b>psnup</b>(1) or for PDF files by
+<b>pdftk</b>(1).</p>
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>&bull;</p>
+</td>
+<td width="10%"></td>
+<td width="78%">
+
+<p>Extract or strip documentation from ConTeXt source files
+using <b>texutil</b>(1).</p>
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>&bull;</p>
+</td>
+<td width="10%"></td>
+<td width="78%">
+
+<p>Run MetaPost (<b>mpost</b>(1)) to generate figures from
+MetaPost source.</p>
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>&bull;</p>
+</td>
+<td width="10%"></td>
+<td width="78%">
+
+<p>Produce proof sheets of figures used in a ConTeXt source
+file.</p>
+</td>
+</table>
+<a name="OPTIONS"></a>
+<h2>OPTIONS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>All switches are specified in full here but can be
+abbreviated to the shortest unique prefix. Thus,
+<b>--env</b> works the same as <b>--environment</b>. With no
+options, <b>texexec</b> assumes that the file on the command
+line is a ConTeXt source file, i.e. a TeX file in the
+ConTeXt dialect, and produces a PDF file using the source
+file.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="5%"></td>
+<td width="95%">
+<p><b>General Options</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--alone</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Avoid calling other programs when possible. For example,
+<b>--alone</b> will prevent <b>texexec</b> from using
+<b>fmtutil</b>(1) to generate formats (this prevention can
+be handy when tracing installation problems).</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--environments</b><i>=file[,file[,...]]</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify ConTeXt environment file(s), separated by commas,
+to use when processing the source file. This option is
+useful when converting from non-ConTeXt file formats without
+environment or layout settings.</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+<p><b>--help</b></p>
+</td>
+<td width="2%"></td>
+<td width="78%">
+
+<p>Produce a summary of switches and arguments. A more
+detailed help is produced by including <b>--all</b>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--interface=</b><i>language</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify the language ConTeXt should use to communicate
+with you. Options are</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="5" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="14%">
+
+<p><b>en</b></p>
+</td>
+<td width="7%"></td>
+<td width="23%">
+
+<p>US English</p>
+</td>
+<td width="45%">
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="14%">
+
+<p><b>nl</b></p>
+</td>
+<td width="7%"></td>
+<td width="23%">
+
+<p>Dutch</p>
+</td>
+<td width="45%">
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="14%">
+
+<p><b>de</b></p>
+</td>
+<td width="7%"></td>
+<td width="23%">
+
+<p>German</p>
+</td>
+<td width="45%">
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="14%">
+
+<p><b>uk</b></p>
+</td>
+<td width="7%"></td>
+<td width="23%">
+
+<p>British English</p>
+</td>
+<td width="45%">
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="14%">
+
+<p><b>cz</b></p>
+</td>
+<td width="7%"></td>
+<td width="23%">
+
+<p>Czech</p>
+</td>
+<td width="45%">
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="14%">
+
+<p><b>it</b></p>
+</td>
+<td width="7%"></td>
+<td width="23%">
+
+<p>Italian</p>
+</td>
+<td width="45%">
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="14%">
+
+<p><b>--keep</b></p>
+</td>
+<td width="7%"></td>
+<td width="23%"></td>
+<td width="45%">
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>Preserve a few of the temporary files generated while
+processing by appending <i>.keep</i> to their name. For
+example, after</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<pre>   texexec --keep document.tex
+</pre>
+<!-- INDENTATION -->
+<p>you will find (besides <i>document.pdf</i>)
+<i>document.log.keep</i> and <i>document.top.keep</i>. The
+<i>document.top</i> file is where <b>texexec</b> wraps
+<i>document.tex</i> with the proper ConTeXt macro commands
+to set the output format, etc.</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+<p><b>--once</b></p>
+</td>
+<td width="2%"></td>
+<td width="78%">
+
+<p>Process a file exactly once. (By default, <b>texexec</b>
+processes the file as many times as necessary to sort out
+all references, typeset <b>MetaPost</b> code, and so
+forth.)</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--purge</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Get rid of most temporary files generated while
+processing the source file. For example,</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<pre>   texexec --purge somefile.tex
+</pre>
+<!-- INDENTATION -->
+<p>will generate <i>somefile.pdf</i>, cleaning up after
+itself and leaving only one extra file, <i>somefile.tuo</i>.
+See also the <b>--purge</b> option of <b>ctxtools</b>(1)</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--purgeall</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Get rid of all temporary files generated while processing
+the source file, including the <i>filename.tuo</i> file. See
+also the <b>--purge --all</b> option combination of
+<b>ctxtools</b>(1)</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--randomseed=</b><i>NNNN</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Set the random seed.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--result=</b><i>FILENAME</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Allows you to change the basename of the output file. See
+<b>--mode</b> for an example.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--runs=</b><i>NUMBER</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify the number of runs to perform on a file.
+Overrides <b>texexec</b>&rsquo;s calculations.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--separation</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Perform color separations.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--silent</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Suppress a few diagnostic and progress messages.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--timeout=</b><i>NNN</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Abort the run if a subprocess waits for more than
+<i>NNN</i> seconds; e.g. while waiting for user input when
+<b>tex</b> reports an undefined control sequence. Useful for
+automated testing scripts, to make sure the runs finish.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+
+<p><b>--usemodules=</b><i>module1[,module2,[...]]</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Use the comma-separated list of modules. For example, to
+typeset <i>document.tex</i> using the <i>bib</i> and
+<i>units</i> modules:</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>texexec --usemodules=bib,units document.tex
+</pre>
+</td>
+</table>
+<!-- INDENTATION -->
+
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--verbose</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Output extra diagnostic information.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--version</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Print the version number.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="5%"></td>
+<td width="95%">
+<p><b>Processing ConTeXt Source Files</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>Including specifying paper sizes, formats, and so
+forth.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--arrange</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Perform page rearrangements, which are used to produce
+booklets. This option tells ConTeXt to the first <i>n</i>-1
+runs without taking account of arrangements, then on the
+last run to pay attention to the arrangement commands in the
+source file.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--batchmode</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Process the file in batchmode, which means to typeset the
+whole document even if there are errors. More imformation
+about <tt>batchmode</tt> can be found in Donald E.
+Knuth&rsquo;s <i>TeXbook</i>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--nonstopmode</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Process the file in nonstopmode, which means to typeset
+the document and report errors, but not to stop at any
+error. It is similar to batchmode but more verbose. More
+imformation about <tt>nonstopmode</tt> can be found in
+Donald E. Knuth&rsquo;s <i>TeXbook</i>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--bodyfont=</b><i>font</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>The name of a font to preload for use in setting the body
+of the text (OBSOLETE).</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--centerpage</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Center the document on the page.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--color</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Turn on color mode. Color mode can also be set by
+commands embedded in the document. These commands override
+the <b>--color</b> option.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--convert=</b><i>FORMAT</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Convert the input file to ConTeXt format from
+<i>FORMAT</i> before processing. In most cases, this
+conversion will result in a TeX file. Currently supported
+input <i>FORMAT</i>s are <b>xml</b> and <b>sgml</b>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--dvipdfmx, --dvipdfm, --dpx, --dpm</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Use the TeX engine (e.g. <b>pdftex</b> or <b>pdfetex</b>)
+to make a DVI file and <b>dvipdfmx</b>(1) to turn it into
+PDF.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--dvi, --ps, --dvips</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Use the TeX engine (e.g. <b>pdftex</b> or <b>pdfetex</b>)
+to make a DVI file and <b>dvips</b>(1) to turn it into
+PostScript. It&rsquo;s counterintuitive that <b>--dvi</b>
+produces a PostScript file in addition to the DVI file. But
+that&rsquo;s because <b>--dvi</b> is shorthand for
+<b>--dvips</b>; adding the <b>--nobackend</b> option
+prevents <b>texexec</b>&rsquo;s running <b>dvips</b>(1). See
+also the <b>--engine</b> option.</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+<p><b>--fast</b></p>
+</td>
+<td width="2%"></td>
+<td width="78%">
+
+<p>Typeset the document(s) as fast as possible without
+causing problems.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--final</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Perform a final run without skipping anything. This
+option is typically used with <b>--fast</b>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--language=</b><i>LANGUAGE</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Set the language for hyphenation. Can be specified in
+your source file. Options are the same as those for
+<b>--interface</b>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--mode=</b><i>MODELIST</i>,
+<b>--modes=</b><i>MODELIST</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Allows you to change the mode used while typesetting the
+source file. The <i>MODELIST</i> is a comma separated list
+of modes. Modes are a conditional-compilation facility like
+<tt>#ifdef</tt> in C. So one source file can be used to
+produce several typeset documents: one for A4 paper, one for
+screen display in full color, one for letter paper, etc. For
+example:</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<pre>   texexec --pdf --mode=A4     --result=manual-a manual-t.tex
+   texexec --pdf --mode=letter --result=manual-l manual-t.tex
+   texexec --pdf --mode=screen --result=manual-s manual-t.tex
+</pre>
+<!-- INDENTATION -->
+<p>Here the <b>--mode</b> tells ConTeXt which mode
+directives to use when typesetting the source file. The
+<b>--result</b> option tells ConTeXt where to put the output
+file.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--modefile=</b><i>file</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Load this file before most of the usual processing;
+usually used for mode-related material.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--noarrange</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Ignore arrangement commands in the source file.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--nobackend</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Do not run the backend, e.g. <b>dvips</b>(1) or
+<b>dvipdfmx</b>(1). See the <b>--dvips</b> or
+<b>--dvipdfmx</b> options. Why would you give one of those
+options to choose a backend, yet tell <b>texexec</b> not to
+run the backend? Because each backend has its own syntax for
+<tt>\special</tt> calls. Specifying the backend allows the
+ConTeXt macros to use the correct syntax so that when you
+later run the backend to produce PostScript or PDF, the
+specials will be interpreted correctly.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--pages=</b><i>PAGENUMBERLIST</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify the pages or page range to appear in the output
+file. <i>PAGENUMBERLIST</i> may be the keyword <b>odd</b> or
+<b>even</b>; or one or more pages or page ranges separated
+by commas. For example,</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>texexec --pages=1,7,8-11,14 somefile.tex
+</pre>
+</td>
+</table>
+<!-- INDENTATION -->
+
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--paperformat=</b><i>KEY</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>For typesetting multiple pages on a single piece of
+paper. <i>KEY</i> has the form <b>a4a3</b> (for printing A4
+pages on A3 paper), <b>a5a4</b> (for printing A5 pages on A4
+paper), or in general <b>aMaN</b>. The actual layout of the
+pages is specified with the <b>--printformat</b> option.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--pdf, --pdftex</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Use <b>pdftex</b>(1) to produce a pdf document (the
+default).</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--printformat=</b><i>KEY</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify the layout of the final output. <i>KEY</i> can be
+<b>up</b>, resulting in 2 pages per sheet, double sided; or
+<b>down</b>, resulting in 2 rotated pages per sheet, double
+sided. Use the <b>--paperformat</b> option to specify the
+original page and sheet size.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--utfbom</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Turn on UTF-8 encoding.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--xetex, --xtx</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Use <b>xetex</b>(1) to produce a pdf document.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="5%"></td>
+<td width="95%">
+<p><b>Creating ConTeXt Format Files</b></p></td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+<p><b>--make</b></p>
+</td>
+<td width="2%"></td>
+<td width="78%">
+
+<p>Generate a ConTeXt format file. For example, to make
+<i>cont-en.fmt</i> and have it placed in a default format
+directory:</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<pre>   texexec --make de
+</pre>
+<!-- INDENTATION -->
+<p>The most common invocation, which is used by scripts that
+install a new version of ConTeXt (see <b>ctxtools</b>(1)),
+uses <b>--all</b> so that <b>texexec</b> makes the usual
+formats:</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>texexec --make --all
+</pre>
+</td>
+</table>
+<!-- INDENTATION -->
+
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--local</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>When searching for TeX or MetaPost formats, look in the
+current directory rather than in the location set by the
+kpse library. See <b>kpathsea</b>(1) for more information on
+path searching.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--check</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Check and report information about the ConTeXt version,
+the distribution, the TeX engine, and the language
+interfaces/formats.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="5%"></td>
+<td width="95%">
+<p><b>Expert options</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>You should know what you&rsquo;re doing if you use these
+options!</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--alpha</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Use the TEXMFALPHA environment variable to find and run
+an alpha release of ConTeXt.</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+<p><b>--beta</b></p>
+</td>
+<td width="2%"></td>
+<td width="78%">
+
+<p>Use the TEXMFBETA environment variable to find and run a
+beta release of ConTeXt.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--distribution</b><i>=dist</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Usually one of <b>standard</b>, <b>web2c</b>, or
+<b>miktex</b>. <b>texexec</b> should figure it out
+automatically, and you shouldn&rsquo;t need to use this
+option.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--engine</b><i>=texengine</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify the program to do the hard work of typesetting.
+Currently either <b>pdftex</b> (the default), <b>xetex</b>,
+or <b>aleph</b>. The <b>luatex</b> value is experimental.
+The <b>--engine</b> option is not usually needed. Instead,
+let <b>texexec</b> figure out the setting based on other
+command-line information. See for example the <b>--xetex</b>
+or <b>--pdf</b> switches.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="5%"></td>
+<td width="95%">
+<p><b>Postprocess PDF Files</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+
+<p><b>--combination=</b><i>ROWS</i><b>*</b><i>COLS</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify the number of pages to show on a single page. Use
+with <b>--pdfcombine</b>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--pdfarrange</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>For rearranging pages in PDF files.</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>texexec --pdfarrange --paperformat=a5a4 --printformat=up foo.pdf
+</pre>
+<!-- INDENTATION -->
+<p>This command creates an A5 booklet from a PDF file
+<i>foo.pdf</i>. <b>--pdfarrange</b> is used in conjunction
+with the following options.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--pdfcopy</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Copy and perhaps process pages from the pdf file. The
+resulting file is <i>texexec.pdf</i> by default, but you can
+change that using <b>--result</b>. Use the <b>--scale</b>
+option to magnify or demagnify the original pages and the
+<b>--pages</b> option to select the pages to copy. Here is
+an example using all these options:</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>texexec --pages=4-7 --pdfcopy --scale=750 --result=one images.pdf
+</pre>
+<!-- INDENTATION -->
+<p>It takes pages 4-7 from <i>images.pdf</i>, scales them by
+75%, and copies them to <i>one.pdf</i>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--scale=</b><i>integer</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>If the integer is less than 10, then it is taken as an
+(integer) magnification factor. Otherwise, it is taken as a
+magnification factor in TeX terms, i.e. with 1000 meaning
+full scale.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--paperoffset=</b><i>dimen</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify the space between the edge of the pages and the
+beginning of the text block.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--backspace=</b><i>dimen</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify the inside (gutter) margins.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--topspace=</b><i>dimen</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify the top and bottom margin.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--markings</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Add crop marks.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--addempty=</b><i>PAGES</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Add empty pages after the pages specified in
+<i>PAGES</i>. (Useful for, among other things, adding blank
+pages after a table of contents.)</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--textwidth=</b><i>WIDTH</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Set the width of the original text. Specifying this
+parameter with a single-sided original will allow ConTeXt to
+adjust the page layout for double-sided output, producing
+much more attractive results.</p>
+<!-- INDENTATION -->
+<p>With the <b>--pdfarrange</b> flag, specifying more than
+one file will result in all of the files being combined in
+the final result, allowing you to add title pages, decorated
+part separators, and so forth.</p>
+<!-- INDENTATION -->
+<p>You can also do more complex manipulations, such as
+adding additional text to the page by setting up a small
+file with layout definitions and a simple figure insertion
+loop.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--pdfcombine</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Combine multiple pages. Requires the <b>--combination</b>
+option.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--pdfselect</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Extract pages from a file. Use in combination with the
+<b>--selection</b> switch, as in</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>texexec --pdfselect --paperformat=S6
+--selection=1,9,14 file-1
+</pre>
+<!-- INDENTATION -->
+<p>which extracts pages 1, 9, and 14 from <i>file-1.pdf</i>,
+and places them in <i>texexec.pdf</i> (the default output
+filename if an output file isn&rsquo;t specified).</p>
+<!-- INDENTATION -->
+<p>See <b>--pdfarrange</b> for other options.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--selection=</b><i>PAGES</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify pages to be affected by another option. See
+<b>--pdfarrange</b> and <b>--pdfselect</b> for examples.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="5%"></td>
+<td width="95%">
+<p><b>XML handling</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--filters=</b><i>filter1[,filter2[,...]]</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify XML filters to use.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="5%"></td>
+<td width="95%">
+<p><b>Extract or Strip Out Documentation</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--listing</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Produce a typeset version of the source code in
+<i>FILE</i>. You can specify the format of the output file.
+For example, use</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>texexec --ps --listing readme.now
+</pre>
+<!-- INDENTATION -->
+<p>to produce a PostScript file called
+<i>texexec.ps</i>.</p>
+<!-- INDENTATION -->
+<p>See also <b>--backspace</b>, <b>--topspace</b>, and
+<b>--result</b>.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--module</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Create documentation for ConTeXt, MetaPost (see
+<b>mpost</b>(1)), <b>perl</b>(1), and <b>ruby</b>(1)
+modules. Converts the documentation to ConTeXt format and
+then typesets a documentated version of the source file.</p>
+<!-- INDENTATION -->
+<p>Documentation lines in ConTeXt source files are specified
+by beginning lines with these strings:</p>
+<!-- INDENTATION -->
+<p><tt>%C</tt> : Copyright information</p>
+<!-- INDENTATION -->
+<p><tt>%D</tt> : Documentation lines</p>
+<!-- INDENTATION -->
+<p><tt>%I</tt> : TeXEdit information lines (mostly in
+Dutch)</p>
+<!-- INDENTATION -->
+<p><tt>%M</tt> : Macro code needed to processs the
+documentation</p>
+<!-- INDENTATION -->
+<p><tt>%S</tt> : Suppressed lines</p>
+<!-- INDENTATION -->
+<p>The same forms can be used for Perl or ruby scripts,
+except that the <tt>%</tt> character (the TeX comment
+character) is replaced by <tt>#</tt> (the Perl comment
+character).</p>
+<!-- INDENTATION -->
+<p>See also the <b>--documentation</b> option to
+<b>ctxtools</b>(1).</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="5%"></td>
+<td width="95%">
+<p><b>Process MetaPost Figures</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--mpsformats=</b><i>name</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>The name of a MetaPost format file, e.g. <b>metafun</b>
+(the default).</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--mptex</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Strips out and typesets TeX code embedded in a MetaPost
+file.</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="5" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="9%">
+
+<p><b>--nomp</b></p>
+</td>
+<td width="2%"></td>
+<td width="55%">
+
+<p>Do not run <b>mpost</b>(1), even if needed.</p>
+</td>
+<td width="23%">
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--nomprun</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Do not run <b>mpost</b>(1) on embedded MetaPost code.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="5%"></td>
+<td width="95%">
+<p><b>Producing Proof Sheets of Figures</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>Generate information and proof sheets of one or more
+(non-EPS) graphics files. For example,</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="15%"></td>
+<td width="85%">
+<pre>texexec --figures *.png *.jpg
+</pre>
+<!-- INDENTATION -->
+<p>scans the current directory for PNG and JPG files and
+extracts useful information about their sizes and types. By
+default, this information is stored in <i>rlxtools.rli</i>.
+Then the given figures are made into a proof sheet (by
+default <i>texexec.pdf</i>) according to the method
+specified by the <b>--method</b> option. Note that newer
+versions of <b>pdftex</b>(1) do not support TIFF
+inclusion.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>--method=</b><i>ALTERNATIVE</i></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>Specify one of three options to produce the document
+containing the images used in the source file:</p>
+<!-- INDENTATION -->
+<p><b>a</b> : A proof sheet with additional information
+provided for each figure (the default)</p>
+<!-- INDENTATION -->
+<p><b>b</b> : A proof sheet with the graphics only</p>
+<!-- INDENTATION -->
+<p><b>c</b> : One figure per page, with the page clipped to
+the bounding box of the figure</p>
+<!-- INDENTATION -->
+<p>See also <b>--paperoffset</b>, which allows you to
+specify an offset to be added to the page, as in</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>texexec --figures --method=c --paperoffset=.5cm *.pdf *.png *.jpg
+</pre>
+</td>
+</table>
+<a name="USAGE"></a>
+<h2>USAGE</h2>
+<!-- INDENTATION -->
+
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>Each ConTeXt user interface (language) has its own
+format. The following command generates two formats, one
+using the English interface for typesetting in English, and
+one for Dutch:</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="15%"></td>
+<td width="85%">
+<pre>texexec --make en nl
+</pre>
+<!-- INDENTATION -->
+<p>By default, the language used for typesetting matches the
+user-interface language (set with <b>--interface</b>. It is
+possible to use one language for typesetting and another for
+messages by changing the relevant settings in
+<i>cont-usr.tex</i>. These languages can also be changed on
+the command line with a command such as</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p><tt>texexec --make --language=pl,cz,sk en</tt></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>That command generates a ConTeXt format file with an
+English user interface, and the main language set to Polish
+(<b>pl</b>). Czech and Slovak hyphenation patterns are also
+loaded so that Czech and Slovak text included in a source
+file will be typeset properly (<b>cz</b> and <b>sk</b>).</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>o</p>
+</td>
+<td width="10%"></td>
+<td width="78%">
+
+<p>When the appropriate formats are present, a file can be
+typeset by typing</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<pre>   texexec test
+</pre>
+<!-- INDENTATION -->
+<p><b>texexec</b> tries to determine what interface it
+should use to typeset <i>test.tex</i> by looking for a line
+such as</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>% interface=en tex=pdftex output=pdftex
+</pre>
+</td>
+</table>
+<!-- INDENTATION -->
+
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p>at the top of the file (i.e., on the very first line).
+This line is equivalent to <b>TeX</b>&rsquo;s format line,
+&lsquo;&lsquo;&amp;<i>FORMAT</i>&rsquo;&rsquo;).</p>
+<!-- INDENTATION -->
+<p>By default, <b>texexec</b> will produce a PDF file using
+<b>pdftex</b>(1). The <b>--dvips</b> flag tells
+<b>texexec</b> to produce a PostScript file instead.</p>
+<!-- INDENTATION -->
+<p>After an error-free run, <b>texexec</b> will run
+<b>texutil</b>(1) to determine whether additional runs of
+<b>tex</b>(1) (or <b>pdftex</b>(1)) or any utility programs
+(e.g., <b>bibtex</b>(1), <b>makeindex</b>(1)) are necessary.
+You can suppress these additional runs by specifying the
+<b>--once</b> or <b>--runs</b> flags:</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="26%"></td>
+<td width="74%">
+<pre>texexec --once test
+texexec --runs=2 test
+</pre>
+</td>
+</table>
+<a name="EXAMPLES"></a>
+<h2>EXAMPLES</h2>
+<!-- INDENTATION -->
+
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>Produce PDF from ConTeXt source (the .tex extension is
+optional):</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p><tt>texexec file.tex</tt></p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>Same as the above but without rerunning for
+crossreferences, etc.:</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p><tt>texexec --once file.tex</tt></p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>Produce PostScript from ConTeXt source:</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p><tt>texexec --ps file.tex</tt></p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>Produce file-a4.pdf using conditional compilation
+(modes):</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p><tt>texexec --mode=a4 --result=file-a4 file.tex</tt></p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>Generate format (.fmt) files used by ConTeXt (used during
+installation):</p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p><tt>texexec --make --all</tt></p>
+</td>
+</table>
+<a name="INITIALIZATION"></a>
+<h2>INITIALIZATION</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="22%"></td>
+<td width="78%">
+<p><b>texexec</b> requires ruby. On Unix and Unix-like
+systems, no special steps have to be taken to get
+<b>texexec</b> to work beyond installing ruby and having the
+<b>ruby</b>(1) binary in your path.</p>
+</td>
+</table>
+<a name="SEE ALSO"></a>
+<h2>SEE ALSO</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p><b>bibtex</b>(1), <b>ctxtools</b>(1), <b>dvipdfmx</b>(1),
+<b>dvips</b>(1), <b>fmtutil</b>(1), <b>makeindex</b>(1),
+<b>mpost</b>(1), <b>mptopdf</b>(1), <b>pdftex</b>(1),
+<b>pdftk</b>(1), <b>ruby</b>(1), <b>psnup</b>(1),
+<b>tex</b>(1), <b>texfont</b>(1), <b>texmfstart</b>(1),
+<b>texshow</b>(1), <b>texutil</b>(1), <b>xetex</b>(1).</p>
+<!-- INDENTATION -->
+<p>The texexec manual <i>mtexexec.pdf</i>, available from
+<a href="http://www.pragma-ade.com/dir/general/manuals/">PRAGMA ADE</a>.</p>
+<!-- INDENTATION -->
+<p>Donald E. Knuth&rsquo;s <i>The TeXbook</i>.</p>
+<!-- INDENTATION -->
+
+<p><a href="http://www.contextgarden.net">ConTeXt wiki</a>.</p>
+</td>
+</table>
+<a name="AUTHOR"></a>
+<h2>AUTHOR</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="89%">
+<p>This manpage was written by Tobias Burnus
+&lt;burnus@gmx.de&gt; and C.M. Connelly &lt;c@eskimo.com&gt;
+and updated by Sanjoy Mahajan &lt;sanjoy@mit.edu&gt;. It is
+based on the <i>mtexexec.pdf</i> manual written by Hans
+Hagen &lt;pragma@wxs.nl&gt;.</p>
+</td>
+</table>
+<hr>
+</body>
+</html>

@@ -1,0 +1,63 @@
+\documentclass[a5paper,12pt,oneside,openany]{scrbook}
+%\documentclass[a6paper, extrafontsizes, 10pt, oneside, openany, final]{memoir}
+%\setstocksize{1\stockheight}{1\stockwidth}
+
+%\settypeblocksize{0.9\stockheight}{0.9\stockwidth}{*}
+%listof=totoc,toc=indent
+%\KOMAoptions{toc=indentunnumbered}
+%\usepackage[paperwidth=110mm, paperheight=170mm, footnotesep=2\baselineskip, twoside, top=4mm, bottom=5mm, left=7mm,right=7mm, headsep=1mm, foot=2mm, includeheadfoot,heightrounded,showcrop,nomarginpar]{geometry}
+\usepackage[footnotesep=2\baselineskip, twoside, top=4mm, bottom=5mm, left=7mm,right=7mm, headsep=1mm, foot=2mm, includeheadfoot,heightrounded,showcrop,nomarginpar]{geometry}
+\parskip=0pt
+\raggedbottom
+
+\usepackage{opcdevocionario}%%%DEFINICOES%%%
+\usepackage{tipografia}
+
+\usepackage[autocompile]{gregoriotex}
+
+\setkomafont{subject}{\scshape}
+\setkomafont{title}{\Huge}
+\setkomafont{subtitle}{\scshape\color{red}}
+\setkomafont{author}{\scshape}
+\setkomafont{date}{\itshape\color{red}}
+
+\setkomafont{chapter}{\normalfont\Large\scshape}
+\renewcommand*{\raggedchapter}{\centering}
+
+%\usepackage{adforn} %providing ornaments
+%\RedeclareSectionCommand[style=section,indent=0pt,beforeskip=-2\baselineskip]{chapter}
+
+\begin{document}%%%DOC%%%
+
+\begin{titlepage}
+\begin{center}
+\topskip0pt
+\vspace*{\fill}
+{\huge BENÇÃO\par}
+{\large DO\par}
+{\Large SANTÍSSIMO\par}
+{\huge SACRAMENTO\par}
+\vspace*{\fill}
+\end{center}
+\end{titlepage}
+
+%\triangulo
+
+\sloppy%Justifica texto
+\pretolerance=-1
+\tolerance=3000
+\adjdemerits=6400
+\doublehyphendemerits=8000000
+\finalhyphendemerits=14400
+\hbadness=99999
+
+%\tableofcontents% INDEX
+
+\columnratio{0.47}
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{3mm}
+\colseprulecolor{red}
+
+\input{texto/adoracao}
+
+\end{document}

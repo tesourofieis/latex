@@ -1,0 +1,21 @@
+\usebtxdataset[mkiv-publications.bib]
+
+
+\starttext
+
+% \startbodymatter
+a citation: \citation[article,book]
+% \stopbodymatter
+
+\enabletrackers[publ*]
+
+% \startbackmatter
+%     \startchapter[title=Bibliography]
+        \placelistofpublications
+%     \stopchapter
+% \stopbackmatter
+
+% \ctxlua{inspect(publications.datasets.default.luadata)}
+
+\stoptext
+

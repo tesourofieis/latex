@@ -1,0 +1,50 @@
+
+\newlength{\rbtextwidth}\setlength{\rbtextwidth}{289pt}
+\newlength{\rbtextheight}\setlength{\rbtextheight}{490pt}
+
+\newcommand*{\covertext}{%
+{\normalsize O NOVO\par}
+{\huge DEVOCIONÁRIO\par}
+{\tiny DOS PORTUGUESES\par}
+{\footnotesize COM MUITAS ESTIMADAS DEVOÇÕES \par}
+{\footnotesize POPULARES E TRADICIONAIS:\par}
+{\huge O MISSAL,\par}
+{\Large O SALTÉRIO,\par}
+{\huge PEQUENO OFÍCIO DE NOSSA SENHORA,\par}
+{\large ROSÁRIO,\par}
+{\footnotesize EM PORTUGUÊS \& LATIM,\par}
+{\normalsize\textsf{PARA USO DOS FIÉIS}\par}
+{\footnotesize NO SEU DIA-A-DIA.\par}
+{\tiny COM INÚMERAS NOVAS TRADUÇÕES.\par}
+\rule{0.15\rbtextwidth}{0.4pt}\par
+{\Large POR M.~SILVA.\par}
+\rule{0.75\rbtextwidth}{0.4pt}\par
+{\footnotesize \textsf{PRICE ONE SHILLING}\par}
+\rule{0.5\rbtextwidth}{0.4pt}\par
+{\footnotesize LISBOA: IMPRESSO E VENDIDO POR M.~SILVA,\par}
+{\footnotesize ESTRELA.\par}}
+
+\newlength{\sepframe}
+\newlength{\framex}
+\newlength{\framey}
+\setlength{\sepframe}{2.4pt}
+\setlength{\framex}{\rbtextwidth}
+\addtolength{\framex}{2\sepframe}
+\setlength{\framey}{\rbtextheight}
+\addtolength{\framey}{2\sepframe}
+
+\newcommand*{\titleRB}{%
+%%\FSfont{5cu}% Century Old Style
+
+ \begin{picture}(\strip@pt\rbtextwidth,\strip@pt\rbtextheight)%
+ \thinlines
+ \put(0,0){\framebox(\strip@pt\rbtextwidth,\strip@pt\rbtextheight){%
+\begin{minipage}{\rbtextwidth}
+\centering
+\setlength{\parskip}{0.67\baselineskip}
+\covertext
+\end{minipage}
+}}%
+ \put(-\strip@pt\sepframe,-\strip@pt\sepframe)%
+ {\framebox(\strip@pt\framex,\strip@pt\framey){}}%
+ \end{picture}}
