@@ -94,9 +94,11 @@
 \usepackage[headsepline]{scrlayer-scrpage}% CABECALHO
 \clearscrheadfoot
 \pagestyle{scrheadings}
-\cohead{\leftmark}
-\cehead{\rightmark}
-\ihead{\pagemark}
+
+\lohead{\leftmark}
+\rehead{\rightmark}
+\ohead{\pagemark}
+
 \addtokomafont{pagehead}{\textsc}
 \addtokomafont{pagenumber}{\mdseries\fonte}
 \addtokomafont{disposition}{\textsc}

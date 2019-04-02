@@ -29,6 +29,8 @@
 
 \begin{document}
 
+\pagenumbering{roman}
+
 \backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.92\pagewidth, height=0.94\pageheight]{media/frame6}}}
 
 \begin{titlepage}
@@ -56,10 +58,40 @@
 
 \backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.9\pagewidth, height=0.94\pageheight]{media/frame6}}}
 
+\newpage\null\thispagestyle{empty}\newpage
+
+\tableofcontents
+
+\newpage\thispagestyle{empty}
+
+\begin{center}
+\vspace*{\fill}
+
+{\Huge Saltério\par}
+
+\vspace*{\fill}
+
+{\large Versão Galicana}
+
+\vspace*{\fill}
+
+{\LARGE \emph{Latim-Português}}
+
+\vspace*{\fill}
+\end{center}
+
+\newpage
+
 \columnratio{0.47}
 \setlength{\columnseprule}{0pt}
 \setlength{\columnsep}{3mm}
 \colseprulecolor{red}
+
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+
+\pagenumbering{arabic}
+
+\newpage
 
 \input{texto/devocionario/salterio}
 

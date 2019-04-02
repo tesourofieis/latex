@@ -24,5 +24,6 @@
     "servitas"
   ],
   "search.usePCRE2": true,
-  "search.collapseResults": "alwaysExpand"
+  "search.collapseResults": "alwaysExpand",
+  "git.ignoreLimitWarning": true
 }
