@@ -7,11 +7,11 @@
 \usepackage[footnotesep=2\baselineskip, twoside, top=10mm, bottom=12mm, left=11mm,right=11mm, headsep=1mm, foot=2mm, includeheadfoot, heightrounded, nomarginpar]{geometry}
 
 \usepackage{returntogrid,tikz}
-\AddToShipoutPictureBG {\AtTextUpperLeft{\showdebugpagegrid}}
+%\AddToShipoutPictureBG {\AtTextUpperLeft{\showdebugpagegrid}} %Lines Background
 
 \raggedbottom
 
-\usepackage{opcdevocionario}%%%DEFINICOES%%%
+\usepackage{opcdevocionario}
 \usepackage{tipografia}
 
 \usepackage[autocompile]{gregoriotex}
@@ -33,13 +33,13 @@
 \begin{document}
 \pagenumbering{roman}
 
-%\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.92\pagewidth, height=0.94\pageheight]{media/frame6}}}
+\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.92\pagewidth, height=0.94\pageheight]{media/frame6}}}
 
 \begin{titlepage}
 \begin{center}
 \topskip0pt
 \vspace*{\fill}
-\includegraphics[width=0.3\pagewidth]{media/oliveira/logo_branco}\par
+
 {\large Tesouro dos Fiéis\par}
 {\huge DEVOCIONÁRIO\par}
 {\Large Tradicional\par}
@@ -52,16 +52,7 @@
 \newpage
 
 \begin{center}
-\topskip0pt
-\vspace*{\fill}
-{\large Tesouro dos Fiéis\par}
-{\huge DEVOCIONÁRIO\par}
-{\Large Tradicional\par}
-\vspace*{\fill}
-\includegraphics[width=0.5\pagewidth]{media/oliveira/logo_vertical_branco}\par
-\vspace*{\fill}
-{\large Viseu 2019\par}
-\vspace*{\fill}
+
 \end{center}
 
 %\triangulo
@@ -77,7 +68,7 @@
 \lineskiplimit=-12pt
 \lineskip=0pt
 
-%\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.9\pagewidth, height=0.94\pageheight]{media/frame6}}}
+\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.9\pagewidth, height=0.94\pageheight]{media/frame6}}}
 
 \newpage\tableofcontents% INDEX
 
@@ -86,12 +77,12 @@
 \setlength{\columnsep}{3mm}
 \colseprulecolor{red}
 
-\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\pagenumbering{gobble}
 
 \pagenumbering{arabic}
 
-%\input{texto/salterio}
-%\input{texto/oficio}
+%\input{texto/devocionario/salterio}
+%\input{texto/devocionario/oficio}
 %\input{texto/adoracao}
 \newpage\input{texto/estruturadevocionario}
 
