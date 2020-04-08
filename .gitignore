@@ -254,3 +254,6 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+__latexindent_temp.tex
+texto/devocionario/salmos/__latexindent_temp.tex
+texto/devocionario/salmos/__latexindent_temp.tex
