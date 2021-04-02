@@ -2,6 +2,7 @@
 *.aux
 *.lof
 *.log
+*.glog
 *.lot
 *.fls
 *.out
@@ -11,6 +12,8 @@
 *.cb
 *.cb2
 .*.lb
+.*.log
+.*.pdf
 
 ## Intermediate documents:
 *.dvi
@@ -257,3 +260,9 @@ TSWLatexianTemp*
 __latexindent_temp.tex
 texto/devocionario/salmos/__latexindent_temp.tex
 texto/devocionario/salmos/__latexindent_temp.tex
+
+Devocionario (conflicted).pdf
+Devocionario (conflicted).pdf
+gregorio-git/
+baptismobernardo.tex
+./Milicia*

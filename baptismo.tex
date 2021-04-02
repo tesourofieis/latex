@@ -1,0 +1,481 @@
+%!TEX program = lualatex
+
+\documentclass[a5paper,10pt]{scrbook}
+
+\usepackage[footnotesep=2\baselineskip, twoside, top=10mm, bottom=12mm, left=11mm,right=11mm, headsep=1mm, foot=2mm, includeheadfoot, heightrounded, nomarginpar]{geometry}
+
+\usepackage{returntogrid,tikz}
+
+\raggedbottom
+
+\usepackage{opcdevocionario}%%%DEFINICOES%%%
+\usepackage{tipografia}
+
+\usepackage[autocompile]{gregoriotex}
+
+\setkomafont{subject}{\scshape}
+\setkomafont{title}{\Huge}
+\setkomafont{subtitle}{\scshape\color{red}}
+\setkomafont{author}{\scshape}
+\setkomafont{date}{\itshape\color{red}}
+
+\setkomafont{chapter}{\normalfont\Large\scshape}
+\renewcommand*{\raggedchapter}{\centering}
+
+\usepackage{adforn} %providing ornaments
+\RedeclareSectionCommand[style=section,indent=0pt,beforeskip=-2\baselineskip]{chapter}
+
+\usepackage{hyperref}
+
+\begin{document}
+\pagenumbering{roman}
+
+\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.92\pagewidth, height=0.94\pageheight]{media/frame6}}}
+
+\begin{titlepage}
+\begin{center}
+\topskip0pt
+\vspace*{\fill}
+{\huge BAPTISMO\par}
+\vspace*{\fill}
+\end{center}
+\end{titlepage}
+
+\sloppy%Justifica texto
+\pretolerance=-1
+\tolerance=3000
+\adjdemerits=6400
+\doublehyphendemerits=8000000
+\finalhyphendemerits=14400
+\hbadness=99999
+
+\lineskiplimit=-12pt
+\lineskip=0pt
+
+\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.9\pagewidth, height=0.94\pageheight]{media/frame6}}}
+
+\columnratio{0.47}
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{3mm}
+\colseprulecolor{red}
+
+\section{Baptismo}
+
+\paragraph{Apresentação do neófito e interrogatório}
+
+\textit{Aquele que vai receber o Baptismo, estacionará à entrada do Templo, diante do Sacerdote, ficando o Padrinho ao lado direito e a Madrinha ao lado esquerdo. O Ministro apresenta-se e começa o interrogatório a que devem responder o Padrinho e a Madrinha.}
+
+\begin{paracol}{2}\latim{
+    {\redx Sac.} {\redx Teresa, João, Petra} Quid petis ab Ecclésia Dei?
+}\switchcolumn\portugues{
+  {\redx Sac.} {\redx Teresa, João, Petra} O que pedes à Igreja de Deus?
+}\switchcolumn*\latim{
+℟. Fidem.
+}\switchcolumn\portugues{
+℟. A Fé.
+}\switchcolumn*\latim{
+{\redx Sac.} Fides, quid tibi præstat?
+}\switchcolumn\portugues{
+{\redx Sac.} Para que te serve a Fé?
+}\switchcolumn*\latim{
+℟. Vitam ætérnam.
+}\switchcolumn\portugues{
+℟. Para alcançar a vida eterna.
+}\switchcolumn*\latim{
+{\redx Sac.} Si ígitur vis ad vitam íngredi, serva mandáta. Díliges Dóminum Deum tuum ex toto corde tuo, et ex tota ánima tua, et ex tota mente tua, et próximum tuum sicut teípsum.
+}\switchcolumn\portugues{
+{\redx Sac.} Se, portanto, queres alcançar a vida eterna, observa os Mandamentos. Amarás o Senhor, teu Deus, com todo teu coração, com toda tua alma e com toda tua inteligência, e amarás o próximo como a ti próprio.
+}\end{paracol}
+
+\paragraph{Exorcismos e Ritos preparatórios}
+
+\paragraph{Insuflação}
+
+\textit{O Sacerdote sopra levemente três vezes sobre a cabeça do Neófito:}
+
+\begin{paracol}{2}\latim{
+\rlettrine{E}{xi} ab eo (ea), immúnde spíritus, et da locum Spirítui Sancto Paráclito.
+}\switchcolumn\portugues{
+\rlettrine{E}{spírito} impuro, sai deste (ou desta) e dá o teu lugar ao Espírito Santo Paráclito!
+}\end{paracol}
+
+\paragraph{Assinalação da Cruz}
+
+\textit{O Sacerdote fará o sinal da Cruz na testa e no peito do Neófito:}
+
+\begin{paracol}{2}\latim{
+\rlettrine{A}{ccipe} signum Crucis tam in fron \cruz te, quam in cor \cruz de, sume fidem cæléstium præceptórum: et talis esto móribus, ut templum Dei jam esse possis.
+}\switchcolumn\portugues{
+\rlettrine{R}{ecebe} o sinal da Cruz, na fronte \cruz e no coração \cruz ; abraça a fé nos preceitos divinos; e procede de tal modo que desde já possas ser um templo de Deus.
+}\end{paracol}
+
+\textit{O Sacerdote continua:}
+
+\begin{paracol}{2}\latim{
+\begin{nscenter} Orémus. \end{nscenter}
+}\switchcolumn\portugues{
+\begin{nscenter} Oremos. \end{nscenter}
+}\switchcolumn*\latim{
+  \rlettrine{P}{reces} nostras, quæsumus, Dómine, cleménter exáudi: et hunc eléctum tuum {\redx Teresa, João, Petra} (hanc eléctam tuam {\redx Teresa, João, Petra}) crucis Domínicæ impressióne signátum (signátam) perpétua virtúte custódi: ut magnitúdinis glóriæ tuæ rudiménta servans, per custódiam mandatórum tuórum ad regeneratiónis glóriam perveníre mereátur. Per Christum Dóminum nostrum.
+}\switchcolumn\portugues{
+  \rlettrine{P}{ela} vossa clemência, Vos suplicamos, Senhor, dignai-Vos ouvir as nossas preces; e com vosso poder guardai sempre este vosso escolhido {\redx Teresa, João, Petra} (ou esta vossa escolhida {\redx Teresa, João, Petra}) que acaba de ser assinalado (a) com a Cruz do Senhor, a fim de que, conservando as primeiras instruções da vossa infinita glória, possa alcançar a glória da regeneração pela prática dos vossos Mandamentos. Por Cristo, nosso Senhor.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\paragraph{Imposição da mão}
+
+\textit{O Sacerdote coloca a sua mão direita sobre a cabeça do Neófito:}
+
+\begin{paracol}{2}\latim{
+\begin{nscenter} Orémus. \end{nscenter}
+}\switchcolumn\portugues{
+\begin{nscenter} Oremos. \end{nscenter}
+}\switchcolumn*\latim{
+  \rlettrine{O}{mnípotens,} sempitérne Deus, Pater Dómini nostri Jesu Christi, respícere dignáre super hunc fámulum tuum {\redx Teresa, João, Petra} (hanc fámulam tuam {\redx Teresa, João, Petra}) quem (quam) ad rudiménta fídei vocáre dignátus es; omnem cæcitátem cordis ab eo (ea) expélle; disrúmpe omnes láqueos sátanæ, quibus fúerat colligátus (colligáta); áperi ei, Dómine, jánuam pietátis tuæ, ut signo sapiéntiæ tuæ imbútus (imbúta), ómnium cupiditátum fœtóribus cáreat, et ad suávem odórem præceptórum tuórum lætus (læta) tibi in Ecclésia tua desérviat, et profíciat de die in diem. Per eúmdem Christum Dóminum nostrum.
+}\switchcolumn\portugues{
+  \rlettrine{D}{eus} omnipotente e sempiterno, Pai de nosso Senhor Jesus Cristo, dignai-Vos olhar propício para este vosso servo (ou para esta vossa serva) {\redx Teresa, João, Petra}, que Vos dignastes chamar à iniciação da Fé; afastai para longe dele (ou dela) a cegueira do coração; quebrai todos os laços com que Satanás o (ou a) havia prendido. Abri-lhe, Senhor, a porta da vossa misericórdia, a fim de que, marcado (a) com o sinal da vossa sabedoria, seja preservado (a) da corrupção de todas as más paixões e, atraído (a) pelo suave odor dos vossos Mandamentos, Vos sirva com alegria na vossa Igreja de dia para dia. Pelo mesmo Cristo, nosso Senhor.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\paragraph{Bênção do sal}
+
+\begin{paracol}{2}\latim{
+\rlettrine{E}{xorcízo} te, creatúra salis, in nómine Dei \cruz Patris omnipoténtis, et in caritáte Dómini nostri Jesu \cruz Christi, et in virtúte Spíritus \cruz Sancti. Exorcízo te per Deum \cruz vivum, per Deum \cruz verum, per Deum \cruz sanctum, per Deum \cruz qui te ad tutélam humáni géneris procreávit, et pópulo veniénti ad credulitátem per servos suos consecrári præcépit, ut in nómine sanctæ Trinitátis efficiáris salutáre sacraméntum ad effugándum inimícum. Proínde rogámus te, Dómine Deus noster, ut hanc creatúram salis sanctificándo sanctí \cruz fices, et benedicéndo bene \cruz dícas, ut fiat ómnibus accipiéntibus perfécta medicína, pérmanens in viscéribus eórum, in nómine ejúsdem Dómini nostri Jesu Christi, qui ventúrus est judicáre vivos et mórtuos, et sæculum per ignem.
+}\switchcolumn\portugues{
+\rlettrine{E}{u} te exorcizo, criatura de sal, em Nome de Deus \cruz Pai omnipotente, na caridade de nosso Senhor Jesus \cruz Cristo, e com o poder do Espírito \cruz Santo. Eu te exorcizo em Nome do Deus \cruz vivo, do Deus \cruz verdadeiro, do Deus \cruz santo, do Deus \cruz que te criou para proveito do género humano, e ordenou aos seus servos te consagrassem para o povo chamado à Fé, a fim de que em Nome da Santíssima Trindade possas ser instrumento salutar para afugentar o inimigo. Por isso, Senhor, nosso Deus, Vos rogamos que santifiqueis \cruz e abençoeis \cruz esta criatura de sal, para que se torne em medicina salutar daquelas que o tomarem, e permaneça nas suas entranhas, em Nome de nosso Senhor Jesus Cristo, que há-de vir a julgar os vivos e os mortos, e o mundo pelo fogo.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\textit{O Sacerdote introduz alguns grãos deste Sal na boca do baptizado:}
+
+\begin{paracol}{2}\latim{
+{\redx N.} Accipe sal sapiéntiæ: propitiátio sit tibi in vitam ætérnam.
+}\switchcolumn\portugues{
+{\redx N.} Recebe o sal da sabedoria; que ele te seja propício para a vida eterna.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\switchcolumn*\latim{
+{\redx Sac.} Pax tecum.
+}\switchcolumn\portugues{
+{\redx Sac.} A paz seja contigo.
+}\switchcolumn*\latim{
+℟. Et cum spíritu tuo.
+}\switchcolumn\portugues{
+℟. E com vosso espírito.
+}\end{paracol}
+
+\textit{Dada a paz, o Sacerdote recita a seguinte oração:}
+
+\begin{paracol}{2}\latim{
+\begin{nscenter} Orémus. \end{nscenter}
+}\switchcolumn\portugues{
+\begin{nscenter} Oremos. \end{nscenter}
+}\switchcolumn*\latim{
+  \rlettrine{D}{eus} patrum nostrórum, Deus univérsæ cónditor veritátis, te súpplices exorámus, ut hunc fámulum tuum {\redx Teresa, João, Petra} (hanc fámulam tuam{\redx N.}) respícere dignéris propítius, et hoc primum pábulum salis gustántem, non diútius esuríre permíttas, quo minus cibo expleátur cælésti, quátenus sit semper spíritu fervens, spe gaudens, tuo semper nómini sérviens. Perduc eum (eam), Dómine, quæsumus, ad novæ regeneratiónis lavácrum, ut cum fidélibus tuis promissiónum tuárum ætérna præmia cónsequi mereátur. Per Christum Dóminum nostrum.
+}\switchcolumn\portugues{
+  \rlettrine{D}{eus} de nossos pais, ó Deus, Autor de toda a verdade, Vos pedimos e suplicamos que Vos digneis olhar benignamente para o vosso servo {\redx Teresa, João, Petra} (para a vossa serva {\redx Teresa, João, Petra}) que, que havendo provado pela primeira vez este sal, não sofra por mais tempo fome, antes permiti que seja sustentado (a) com o alimento celestial, conservando-se sempre ao serviço do vosso Nome, animado (a) com constante fervor espiritual e alegre esperança. Conduzi-o (a), Senhor, Vos suplicamos, à fonte da regeneração, para que consiga alcançar com os demais fiéis as recompensas eternas por Vós prometidas. Por Cristo, nosso Senhor.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\paragraph{Abjuração}
+
+\textit{O Sacerdote continua, em tom imperativo:}
+
+\begin{paracol}{2}\latim{
+    \rlettrine{E}{xorcízo} te, immúnde spíritus, in nómine Pa \cruz tris, et Fí \cruz lii, et Spíritus \cruz Sancti, ut éxeas, et recédas ab hoc fámulo (hac fámula) Dei {\redx Teresa, João, Petra}: Ipse enim tibi ímperat, maledícte damnáte, qui pédibus super mare ambulávit, et Petro mergénti déxteram porréxit.
+}\switchcolumn\portugues{
+  \rlettrine{E}{m} Nome do Pai \cruz e do Filho \cruz e do Espírito \cruz Santo, eu te exorcizo, ó espírito impuro, a fim de que saias e te afastes deste servo (ou serva) de Deus, {\redx Teresa, João, Petra} Quem isto te ordena, ó espírito maligno, é Aquele Senhor que caminhou por cima das ondas do mar e que estendeu a mão a Pedro, quando este se submergia.
+}\switchcolumn*\latim{
+  Ergo, maledícte diábole, recognósce senténtiam tuam, et da honórem Deo vivo et vero, da honórem Jesu Christo Fílio ejus, et Spirítui Sancto, et recéde ab hoc fámulo (hac fámula) Dei {\redx Teresa, João, Petra}, quia istum (istam) sibi Deus, et Dóminus noster Jesus Christus ad suam sanctam grátiam, et benedictiónem, fontémque Baptísmatis vocáre dignátus est.
+}\switchcolumn\portugues{
+  Portanto, tu, demónio maldito, submete-te à sua condenação e dá glória ao Deus vivo e verdadeiro, a Jesus Cristo, seu Filho, e ao Espírito Santo. Retira-te deste servo (ou serva) de Deus, {\redx Teresa, João, Petra}, porque Deus assim manda, e nosso Senhor Jesus Cristo dignou-se chamá-lo (ou chamá-la) à sua graça e bênção, e à fonte baptismal.
+}\end{paracol}
+
+\paragraph{Assinalação da Cruz}
+
+\textit{O Sacerdote impõe o sinal da Cruz na testa do Neófito:}
+
+\begin{paracol}{2}\latim{
+\rlettrine{E}{t} hoc signum sanctæ Cru \cruz cis, quod nos fronti ejus damus, tu, maledícte diábole, numquam áudeas violáre. Per eúmdem Christum Dóminum nostrum.
+}\switchcolumn\portugues{
+\rlettrine{E}{} te não atrevas nunca, ó demónio maldito, a violar este sinal \cruz da santa Cruz que imprimimos na sua fronte. Pelo mesmo Cristo, nosso Senhor.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\paragraph{Imposição da mão}
+
+\textit{O Sacerdote impõe sobre a cabeça do Neófito a sua mão direita:}
+
+\begin{paracol}{2}\latim{
+\begin{nscenter} Orémus. \end{nscenter}
+}\switchcolumn\portugues{
+\begin{nscenter} Oremos. \end{nscenter}
+}\switchcolumn*\latim{
+  \rlettrine{A}{etérnam} ac justíssimam pietátem tuam déprecor, Dómine sancte, Pater omnípotens, ætérne Deus, auctor lúminis et veritátis, super hunc fámulum tuum {\redx Teresa, João, Petra} (hanc fámulam tuam {\redx Teresa, João, Petra}) ut dignéris eum (eam) illumináre lúmine intelligéntiæ tuæ: munda eum (eam) et sanctífica: da ei sciéntiam veram, ut dignus (digna) grátia Baptísmi tui efféctus (effécta), téneat firmam spem, consílium rectum, doctrínam sanctam. Per Christum Dóminum nostrum.
+}\switchcolumn\portugues{
+  \rlettrine{S}{enhor} santo, Pai omnipotente, Deus eterno, autor da luz e da verdade, imploro a vossa eterna e justíssima bondade em favor deste vosso servo (ou serva) {\redx Teresa, João, Petra}, a fim de que Vos digneis ilustrá-lo (ou ilustrá-la) com a luz da vossa inteligência, purificá-lo (ou purificá-la) e santificá-lo (ou santificá-la). Concedei-lhe, Senhor, a verdadeira ciência, para que, tornando-se digno (ou digna) da graça do Baptismo, conserve sempre uma esperança bem firme, um conselho bem recto e doutrina santa.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\paragraph{Entrada no Templo}
+
+\paragraph{Imposição da estola}
+
+\textit{O Sacerdote impõe a Estola sobre a cabeça do Neófito e entra com ele e com os Padrinhos no Templo.}
+
+\textit{Entretanto, o Sacerdote diz:}
+
+\begin{paracol}{2}\latim{
+{\redx N.} Ingrédere in templum Dei, ut hábeas partem cum Christo in vitam ætérnam.
+}\switchcolumn\portugues{
+{\redx N.} Entra no Templo de Deus, a fim de que tenhas parte com Cristo na vida eterna.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\paragraph{Iniciação na fé}
+
+\textit{O cortejo caminha até próximo da Fonte Baptismal e recitam em voz alta o Credo e o Pater Noster.}
+
+\paragraph{Creio em Deus}
+
+\begin{paracol}{2}\latim{
+\rlettrine{C}{redo} in Deum, Patrem omnipoténtem, Creatórem cæli et terræ. Et in Jesum Christum, Fílium ejus únicum, Dóminum nostrum: qui concéptus est de Spíritu Sancto, natus ex María Vírgine, passus sub Póntio Piláto, crucifíxus, mórtuus, et sepúltus: descéndit ad ínferos; tértia die resurréxit a mórtuis; ascéndit ad cælos; sedet ad déxteram Dei Patris omnipoténtis: inde ventúrus est judicáre vivos et mórtuos. Credo in Spíritum Sanctum, sanctam Ecclésiam cathólicam, Sanctórum communiónem, remissiónem peccatórum, carnis resurrectiónem, vitam ætérnam.
+}\switchcolumn\portugues{
+\rlettrine{C}{reio} em Deus, Pai todo-poderoso, Criador do céu e da terra; e em Jesus Cristo, seu único Filho, nosso Senhor; o qual foi concebido pelo poder do Espírito Santo; nasceu da Virgem Maria; padeceu sob Pôncio Pilatos; foi crucificado, morto e sepultado; desceu aos infernos; ao terceiro dia ressuscitou dos mortos; subiu aos céus; está assentado à direita de Deus Pai todo-poderoso, donde há-de vir a julgar os vivos e os mortos. Creio no Espírito Santo; na Santa Igreja Católica; na comunicação dos Santos; na remissão dos pecados; na ressurreição da carne; na vida eterna. Amen.
+}\end{paracol}
+
+\paragraph{Pai-Nosso}
+
+\begin{paracol}{2}\latim{
+\rlettrine{P}{ater} noster, qui es in cælis, sanctificétur nomen tuum. Advéniat regnum tuum. Fiat volúntas tua, sicut in cælo, et in terra. Panem nostrum quotidiánum da nobis hódie. Et dimítte nobis débita nostra, sicut et nos dimíttimus debitóribus nostris. Et ne nos indúcas in tentatiónem: sed líbera nos a malo. Amen.
+}\switchcolumn\portugues{
+\rlettrine{P}{ai-nosso,} que estais nos céus, santificado seja o vosso Nome. Venha a nós o vosso reino. Seja feita a vossa vontade, assim na terra como no céu. O pão nosso de cada dia nos dai hoje. Perdoai-nos as nossas ofensas, assim como nós perdoamos a quem nos tem ofendido. E não nos deixeis cair em tentação; mas livrai-nos do mal. Amen.
+}\end{paracol}
+
+\textit{O Sacerdote faz o:}
+
+\paragraph{Último Exorcismo}
+
+\begin{paracol}{2}\latim{
+    \rlettrine{E}{xorcízo} te, omnis spíritus immúnde, in nómine Dei \cruz Patris omnipoténtis, et in nómine Jesu \cruz Christi Fílii ejus, Dómini et Júdicis nostri, et in virtúte Spíritus \cruz Sancti, ut discédas ab hoc plásmate Dei {\redx Teresa, João, Petra}, quod Dóminus noster ad templum sanctum suum vocáre dignátus est, ut fiat templum Dei vivi, et Spíritus Sanctus hábitet in eo. Per eúmdem Christum Dóminum nostrum, qui ventúrus est judicáre vivos et mórtuos, et sæculum per ignem.
+}\switchcolumn\portugues{
+  \rlettrine{E}{u} te exorcizo, ó espírito imundo, qualquer que sejas, em Nome de Deus \cruz Pai omnipotente, e em nome de Jesus \cruz Cristo, seu Filho, nosso Senhor e nosso Juiz, e pelo poder do Espírito \cruz Santo, para que saias desta criatura de Deus, {\redx Teresa, João, Petra}, que nosso Senhor se dignou chamar ao seu sagrado templo, a fim de que se torne em templo do Deus vivo e morada do Espírito Santo. Pelo mesmo Cristo, nosso Senhor, que há-de vir a julgar os vivos e os mortos, e o mundo pelo fogo.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\paragraph{Insalivação}
+
+\textit{O Sacerdote com a saliva da sua boca toca nas orelhas do Neófito:}
+
+\begin{paracol}{2}\latim{
+Ephpheta, quod est, Adaperire.
+}\switchcolumn\portugues{
+Éfeta, isto é: Abre-te.
+}\end{paracol}
+
+\textit{Imediatamente, tocando no nariz do Neófito, acrescenta:}
+
+\begin{paracol}{2}\latim{
+\rlettrine{I}{n} odórem suavitátis. Tu autem effugáre, diábole; appropinquábit enim judícium Dei.
+}\switchcolumn\portugues{
+\rlettrine{E}{m} odor de suavidade. Tu, porém, ó demónio, foge, porque se aproxima o reino de Deus.
+}\end{paracol}
+
+\paragraph{Renúncia a Satanás}
+
+\textit{O Sacerdote começa o interrogatório, ao qual devem responder com voz clara e firme: são feitas no singular, porque se referem ao Neófito.}
+
+\begin{paracol}{2}\latim{
+    {\redx Sac.} {\redx Teresa, João, Petra} Abrenúntias sátanæ?
+}\switchcolumn\portugues{
+  {\redx Sac.} {\redx Teresa, João, Petra} Renuncias a Satanás?
+}\switchcolumn*\latim{
+℟. Abrenúntio.
+}\switchcolumn\portugues{
+℟. Renuncio!
+}\switchcolumn*\latim{
+{\redx Sac.} Et ómnibus opéribus ejus?
+}\switchcolumn\portugues{
+{\redx Sac.} E a todas suas obras?
+}\switchcolumn*\latim{
+℟. Abrenúntio.
+}\switchcolumn\portugues{
+℟. Renuncio!
+}\switchcolumn*\latim{
+{\redx Sac.} Et ómnibus pompis ejus?
+}\switchcolumn\portugues{
+{\redx Sac.} E a todas suas seduções?
+}\switchcolumn*\latim{
+℟. Abrenúntio.
+}\switchcolumn\portugues{
+℟. Renuncio!
+}\end{paracol}
+
+\paragraph{Unção Catecumenal}
+
+\textit{O Sacerdote unge no peito e entre as espáduas o Neófito. Para que estas Unções possam ser feitas sobre a pele do Neófito, ser-lhe-ão descobertos o peito e depois as espáduas, ao pé do pescoço.}
+
+\begin{paracol}{2}\latim{
+{\redx Sac.} Ego te línio \cruz óleo salútis in Christo Jesu Dómino nostro, ut hábeas vitam ætérnam.
+}\switchcolumn\portugues{
+{\redx Sac.} Eu te unjo \cruz com o Óleo da salvação em nosso Senhor Jesus Cristo, para que possas possuir a vida eterna.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\textit{Chegado a este ponto, o Sacerdote depõe a Estola de cor violácea e substitui-a pela Estola de cor branca.}
+
+\paragraph{Confissão da Fé}
+
+\textit{O Sacerdote entra no Baptistério, acompanhado pelo Neófito e pelos Padrinhos, faz as três interrogações do Ritual, às quais todos devem responder com convicção e firmeza:}
+
+\begin{paracol}{2}\latim{
+    {\redx Sac.} {\redx Teresa, João, Petra} Credis in Deum Patrem omnipoténtem, Creatórem cæli et terræ?
+}\switchcolumn\portugues{
+  {\redx Sac.} {\redx Teresa, João, Petra} Crês em Deus, Pai omnipotente, Criador do céu e da terra?
+}\switchcolumn*\latim{
+℟. Credo.
+}\switchcolumn\portugues{
+℟. Creio.
+}\switchcolumn*\latim{
+{\redx Sac.} Credis in Jesum Christum, Fílium ejus únicum, Dóminum nostrum, natum, et passum?
+}\switchcolumn\portugues{
+{\redx Sac.} Crês em Jesus Cristo, seu Filho único, nosso Senhor, que nasceu e padeceu?
+}\switchcolumn*\latim{
+℟. Credo.
+}\switchcolumn\portugues{
+℟. Creio.
+}\switchcolumn*\latim{
+{\redx Sac.} Credis et in Spíritum Sanctum, sanctam Ecclésiam cathólicam, Sanctórum communiónem, remissiónem peccatórum, carnis resurrectiónem, et vitam ætérnam?
+}\switchcolumn\portugues{
+{\redx Sac.} Crês no Espírito Santo, na Santa Igreja Católica, na comunicação dos Santos, na remissão dos pecados, na ressurreição da carne e na vida eterna?
+}\switchcolumn*\latim{
+℟. Credo.
+}\switchcolumn\portugues{
+℟. Creio.
+}\end{paracol}
+
+\paragraph{Ablução Baptismal}
+
+\textit{Terminada a Confissão da Fé, o Sacerdote interroga:}
+
+\begin{paracol}{2}\latim{
+    {\redx Sac.} {\redx Teresa, João, Petra} Vis baptizári?
+}\switchcolumn\portugues{
+  {\redx Sac.} {\redx Teresa, João, Petra} Queres ser baptizado?
+}\switchcolumn*\latim{
+℟. Volo.
+}\switchcolumn\portugues{
+℟. Quero.
+}\end{paracol}
+
+\textit{O Padrinho (ou a Madrinha) ou ambos seguram o Neófito e sustentam-no sobre a Pia baptismal, com o rosto para baixo. Se o Padrinho segurar o Neófito, a Madrinha coloca a mão direita nas costas do Neófito.}
+
+\begin{paracol}{2}\latim{
+    {\redx Sac.} {\redx Teresa, João, Petra} Ego te baptízo in nómine Pa \cruz tris, fundit primo, et Fí \cruz lii, fundit secundo, et Spíritus \cruz Sancti, fundit tertio.
+}\switchcolumn\portugues{
+  {\redx Sac.} {\redx Teresa, João, Petra} Eu te baptizo em Nome do Pai \cruz e do Filho \cruz e do Espírito \cruz Santo.
+}\end{paracol}
+
+\textit{Se, porém, se duvidar se o Neófito tinha sido já baptizado, usar-se-á a seguinte forma:}
+
+\begin{paracol}{2}\latim{
+    {\redx Sac.} {\redx Teresa, João, Petra} Si non es baptizátus (-a), ego te baptízo in nómine Pa \cruz tris, et Fí \cruz lii, et Spíritus \cruz Sancti.
+}\switchcolumn\portugues{
+  {\redx Sac.} {\redx Teresa, João, Petra} Se não és baptizado (a), eu te baptizo em Nome do Pai \cruz, e do Fi \cruz lho, e do Espírito \cruz Santo.
+}\end{paracol}
+
+\paragraph{Unção Crismal}
+
+\textit{O Sacerdote dirige a Deus a seguinte súplica:}
+
+\begin{paracol}{2}\latim{
+\begin{nscenter} Orémus. \end{nscenter}
+}\switchcolumn\portugues{
+\begin{nscenter} Oremos. \end{nscenter}
+}\switchcolumn*\latim{
+\rlettrine{D}{eus} omnípotens, Pater Dómini nostri Jesu Christi, qui te regenerávit ex aqua et Spíritu Sancto, quique dedit tibi remissiónem ómnium peccatórum (hic inungit), ipse te líniat \cruz Chrísmate salútis in eódem Christo Jesu Dómino nostro in vitam ætérnam.
+}\switchcolumn\portugues{
+\qlettrine{Q}{ue} o Deus omnipotente, Pai de nosso Senhor Jesus Cristo, que te regenerou pela água e pelo Espírito Santo e te concedeu a graça da remissão de todos os pecados, te unja Ele próprio com o Crisma da salvação \cruz para a vida eterna, em o mesmo nosso Senhor Jesus Cristo.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\switchcolumn*\latim{
+{\redx Sac.} Pax tibi.
+}\switchcolumn\portugues{
+{\redx Sac.} A paz seja contigo.
+}\switchcolumn*\latim{
+℟. Et cum spíritu tuo.
+}\switchcolumn\portugues{
+℟. E com vosso espírito.
+}\end{paracol}
+
+\paragraph{Veste Branca}
+
+\begin{paracol}{2}\latim{
+{\redx Sac.} Accipe vestem cándidam, quam pérferas immaculátam ante tribúnal Dómini nostri Jesu Christi, ut hábeas vitam ætérnam.
+}\switchcolumn\portugues{
+{\redx Sac.} Recebe a Veste branca, a qual apresentarás imaculada ante o tribunal de nosso Senhor Jesus Cristo, a fim de alcançares a vida eterna.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\paragraph{Vela Acesa}
+
+\begin{paracol}{2}\latim{
+{\redx Sac.} Accipe lámpadem ardéntem, et irreprehensíbilis custódi Baptísmum tuum: serva Dei mandáta, ut, cum Dóminus vénerit ad núptias, possis occúrrere ei una cum ómnibus Sanctis in aula cælésti, et vivas in sæcula sæculórum.
+}\switchcolumn\portugues{
+{\redx Sac.} Recebe esta Vela acesa e guarda a graça do teu Baptismo com fidelidade irrepreensível: cumpre os Mandamentos de Deus, a fim de que, quando o Senhor vier para as bodas, possas ir ao seu encontro com todos os Santos na corte celestial, e assim permaneças em todos os séculos dos séculos.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\paragraph{Despedida}
+
+\begin{paracol}{2}\latim{
+    {\redx Sac.} {\redx Teresa, João, Petra} Vade in pace, et Dóminus sit tecum.
+}\switchcolumn\portugues{
+  {\redx Sac.} {\redx Teresa, João, Petra} Vai em paz; que o Senhor seja contigo.
+}\switchcolumn*\latim{
+℟. Amen.
+}\switchcolumn\portugues{
+℟. Amen.
+}\end{paracol}
+
+\textit{Lavra-se o Assento do Baptismo, que os Padrinhos assinam, e todos se retiram.}
+
+
+\end{document}

@@ -35,8 +35,12 @@
 %\newfontfamily\portFont[Extension=.otf, BoldFont=Gargoudy-Bold.otf, ItalicFont=Gargoudy-Italic.otf]{Gargoudy-Regular.otf}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \defaultfontfeatures{Numbers = OldStyle, SmallCapsFeatures={RawFeature =+smcp,Renderer=Basic}, RawFeature ={-calt,+ss05,+cv91,+swsh}}
-\setmainfont[Extension=.otf, BoldFont=GoudyStd-Bold.otf, ItalicFont=GoudyStd-Italic.otf, ItalicFeatures={Scale=0.9}]{GoudyStd.otf}
-%\setmainfont[Extension=.otf, BoldFont=GoudyStd-BoldItalic.otf, ItalicFont=GoudyStd-Italic.otf, ItalicFeatures={Scale=1.1}]{Gargoudy-Regular.otf}
+% \setmainfont[Extension=.otf, BoldFont=GoudyStd-Bold.otf, ItalicFont=GoudyStd-Italic.otf, ItalicFeatures={Scale=0.9}]{GoudyStd.otf}
+\setmainfont[
+  BoldFont=GoudyStd-BoldItalic,
+  ItalicFont=GoudyStd-Italic,
+  ItalicFeatures={Scale=1.1}
+]{Cardo}
 
 %%TITULOS%%%%ORNAMENTOS%%
 \usepackage{adjustbox} % Adjustbox to rescale the ornaments (scalebox breaks titlesec for some reason...)

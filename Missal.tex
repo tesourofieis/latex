@@ -4,10 +4,10 @@
 %listof=totoc,toc=indent
 %\KOMAoptions{toc=indentunnumbered}
 %\usepackage[paperwidth=110mm, paperheight=170mm, footnotesep=2\baselineskip, twoside, top=4mm, bottom=5mm, left=7mm,right=7mm, headsep=1mm, foot=2mm, includeheadfoot,heightrounded,showcrop,nomarginpar]{geometry}
-\usepackage[footnotesep=2\baselineskip, twoside, top=10mm, bottom=12mm, left=11mm,right=11mm, headsep=1mm, foot=2mm, includeheadfoot, heightrounded, showcrop, nomarginpar]{geometry}
+\usepackage[footnotesep=2\baselineskip, twoside, top=10mm, bottom=12mm, left=11mm,right=11mm, headsep=1mm, foot=2mm, includeheadfoot, heightrounded, nomarginpar]{geometry}
 
-\usepackage{returntogrid,tikz}
-\AddToShipoutPictureBG {\AtTextUpperLeft{\showdebugpagegrid}}
+\usepackage{returntogrid, tikz}
+% \AddToShipoutPictureBG {\AtTextUpperLeft{\showdebugpagegrid}}
 
 \raggedbottom
 
@@ -33,38 +33,18 @@
 \begin{document}
 \pagenumbering{roman}
 
-%\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.92\pagewidth, height=0.94\pageheight]{media/frame6}}}
+\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.92\pagewidth, height=0.94\pageheight]{media/frame6}}}
 
 \begin{titlepage}
 \begin{center}
 \topskip0pt
 \vspace*{\fill}
-\includegraphics[width=0.3\pagewidth]{media/oliveira/logo_branco}\par
 {\large Tesouro dos Fiéis\par}
 {\huge MISSAL\par}
 {\Large Tradicional\par}
 \vspace*{\fill}
 \end{center}
 \end{titlepage}
-
-\newpage
-
-\newpage
-
-\begin{center}
-\topskip0pt
-\vspace*{\fill}
-{\large Tesouro dos Fiéis\par}
-{\huge MISSAL\par}
-{\Large Tradicional\par}
-\vspace*{\fill}
-\includegraphics[width=0.5\pagewidth]{media/oliveira/logo_vertical_branco}\par
-\vspace*{\fill}
-{\large Viseu 2019\par}
-\vspace*{\fill}
-\end{center}
-
-%\triangulo
 
 \sloppy%Justifica texto
 \pretolerance=-1
@@ -77,7 +57,7 @@
 \lineskiplimit=-12pt
 \lineskip=0pt
 
-%\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.9\pagewidth, height=0.94\pageheight]{media/frame6}}}
+\backgroundsetup{scale=1,opacity=1,angle=0,position=current page.center,contents={\includegraphics[width=0.9\pagewidth, height=0.94\pageheight]{media/frame6}}}
 
 \newpage\tableofcontents% INDEX
 
@@ -90,6 +70,6 @@
 
 \pagenumbering{arabic}
 
-\newpage\input{texto/estruturamissal}
+% \newpage\input{texto/estruturamissal}
 
 \end{document}
